@@ -128,7 +128,7 @@
 
   /* brands */
   .brands{background:var(--bg2);padding:150px 0}
-  .bgrid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:20px}
+  .bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .bcard{background:#fff;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.35s;border:1px solid transparent}
   .bcard:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(24,22,27,.08);border-color:var(--line)}
   .bcard .ph{height:300px;overflow:hidden;position:relative;background:var(--bg2)}
@@ -301,8 +301,8 @@
     .about .top,.fform,.fgrid,.lab-grid{grid-template-columns:1fr}
     .biz,.sgrid{grid-template-columns:1fr}
     .bizcard{min-height:auto}.bizcard h3{margin-top:24px}
-    .bgrid{grid-template-columns:1fr 1fr}
-    .bgrid .bcard:first-child{grid-column:1/-1}
+    .bgrid{grid-template-columns:repeat(3,1fr);gap:14px}
+    .bcard .tx{padding:24px 22px 26px}
     .equation{grid-template-columns:1fr}
     .mitem{flex-basis:calc((100% - 36px)/3)}
     .ngrid2{grid-template-columns:1fr 1fr}
@@ -452,6 +452,66 @@
     .bm-cats div{flex-direction:column;gap:6px}.bm-cats div b{padding:0}
   }
 
+  /* =================== 처방 조합 칩 (계속 바뀜) =================== */
+  .scard.pill h3{margin-top:14px}
+  .scard.pill .viz{margin:20px 0 6px}
+  .combo .cb{position:relative;width:108px;overflow:hidden;transition:background-color .5s ease}
+  .combo .cb em{font-style:normal;display:block;transition:transform .45s cubic-bezier(.16,.84,.24,1),opacity .35s}
+  .combo .cb.out em{transform:translateY(-130%);opacity:0}
+  .combo .cb.pre em{transform:translateY(130%);opacity:0;transition:none}
+
+  /* =================== 수익 시뮬레이션 =================== */
+  .profit{padding:150px 0;background:#fff}
+  .ptabs{display:flex;gap:4px;background:var(--bg2);padding:5px;border-radius:999px}
+  .ptabs button{height:46px;padding:0 22px;border-radius:999px;font-weight:700;font-size:14px;color:var(--muted);transition:.25s}
+  .ptabs button.on{background:var(--brand);color:#fff;box-shadow:0 6px 16px rgba(86,0,122,.22)}
+  .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+  .p-in{border:1px solid var(--line);border-radius:24px;padding:28px}
+  .pmain{border:1px solid var(--line);border-radius:18px;padding:22px 22px 16px;margin-bottom:26px}
+  .pmain .ph2{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:14px}
+  .pmain label{font-weight:700;font-size:15px}
+  .pmain output{font-size:clamp(24px,2.6vw,32px);font-weight:800;color:var(--brand);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .prange{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:8px}
+  .psubs-h{font-weight:800;font-size:14px;margin-bottom:16px}
+  .psubs-h small{font-weight:500;color:var(--muted);margin-left:6px;font-size:12px}
+  .psubs{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px}
+  .psl label{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;font-weight:700;margin-bottom:12px}
+  .psl label small{color:var(--brand);font-size:11px;margin-left:6px;font-weight:600}
+  .psl output{font-variant-numeric:tabular-nums}
+  .proy{margin-top:22px;border-radius:14px;background:var(--bg2);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px}
+  .proy b{font-size:15px}
+  .proy small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+  .proy .st{font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;background:#fff;color:var(--muted);white-space:nowrap}
+  .proy .st.on{background:var(--brand);color:#fff}
+  .preset{margin-top:22px;height:42px;padding:0 18px;border-radius:999px;border:1px solid #d9d6d0;font-size:13px;font-weight:700;transition:.25s}
+  .preset:hover{border-color:var(--brand);color:var(--brand)}
+  input.rg{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--brand) var(--p,50%),#ece7f0 var(--p,50%));outline:none;cursor:pointer}
+  input.rg::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:5px solid var(--brand);box-shadow:0 2px 10px rgba(86,0,122,.3);transition:transform .15s}
+  input.rg::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:5px solid var(--brand);box-shadow:0 2px 10px rgba(86,0,122,.3)}
+  input.rg:active::-webkit-slider-thumb{transform:scale(1.18)}
+  input.rg.big{height:8px}
+  .p-out{border-radius:24px;padding:30px 32px;background:linear-gradient(165deg,#f6eff9 0%,#fbf9fc 60%)}
+  .p-out>small{font-size:13px;color:var(--muted);font-weight:600}
+  .pbig{font-size:clamp(44px,5vw,66px);font-weight:800;color:var(--brand);letter-spacing:-.04em;margin:6px 0 4px;font-variant-numeric:tabular-nums}
+  .pbig.neg{color:#c0392b}
+  .prate{font-size:15px}
+  .donut{width:220px;height:220px;border-radius:50%;margin:26px auto 24px;position:relative;background:#ece7f0}
+  .dhole{position:absolute;inset:24%;background:#fff;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(0,0,0,.03)}
+  .dhole small{font-size:12px;color:var(--muted);font-weight:700}
+  .dhole b{font-size:24px;font-weight:800;color:var(--brand);letter-spacing:-.03em}
+  .plegend{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:9px 26px;font-size:13px}
+  .plegend li{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .plegend li span{display:flex;align-items:center;gap:8px;color:#4a4650}
+  .plegend li i{width:10px;height:10px;border-radius:3px;flex:none}
+  .plegend li b{font-variant-numeric:tabular-nums}
+  .plegend li.pr b,.plegend li.pr span{color:var(--brand);font-weight:800}
+  .ptotal{margin-top:20px}
+  .ptotal div{display:flex;justify-content:space-between;padding:14px 0;border-top:1px solid #e9e1ee;font-size:14px;color:#4a4650}
+  .ptotal b{font-size:17px;color:var(--ink);font-variant-numeric:tabular-nums}
+  .pnote{font-size:13px;color:var(--muted);margin-top:18px;line-height:1.7}
+  @media (max-width:900px){.pgrid{grid-template-columns:1fr}.bgrid{grid-template-columns:1fr!important}}
+  @media (max-width:640px){.profit{padding:96px 0}.p-in,.p-out{padding:22px 18px}.psubs{grid-template-columns:1fr;gap:18px}.donut{width:190px;height:190px}.ptabs button{padding:0 14px;font-size:13px;height:42px}}
+
   /* =================== MOTION (레이아웃은 그대로, 움직임만 추가) =================== */
   :root{--ease2:cubic-bezier(.16,.84,.24,1)}
   .pbar{position:fixed;left:0;top:0;right:0;height:3px;background:var(--brand);transform-origin:left;transform:scaleX(0);z-index:70;pointer-events:none}
@@ -592,7 +652,7 @@
   </div>
   <div class="marquee" id="marquee">
     <div class="mq"><img src="images/menu-19.jpg" alt="얼큰순자국밥"><span class="tag">순자국밥</span></div>
-    <div class="mq txt brand"><b>한 그릇에 담긴<br>순자엄마의 마음</b><small>MAIN BRAND · 순자국밥</small></div>
+    <div class="mq txt brand"><b>한 그릇에 담긴<br>순자엄마의 마음</b><small>BRAND 1 · 순자국밥</small></div>
     <div class="mq"><img src="images/naengmyeon.jpg" alt="고명희냉면"><span class="tag">고명희냉면</span></div>
     <div class="mq txt cream"><b>30년의 노하우,<br>한 그릇의 냉면</b><small>BRAND · 고명희냉면</small></div>
     <div class="mq"><img src="images/hero.jpg" alt="육연회담 육회"><span class="tag">육연회담</span></div>
@@ -646,7 +706,7 @@
     </div>
     <div class="bgrid">
       <article class="bcard rv">
-        <div class="ph"><img src="images/menu-19.jpg" alt="순자국밥 얼큰순자국밥" loading="lazy"><span class="badge main">MAIN BRAND</span></div>
+        <div class="ph"><img src="images/menu-19.jpg" alt="순자국밥 얼큰순자국밥" loading="lazy"><span class="badge">BRAND 1</span></div>
         <div class="tx">
           <div class="blogo"><img src="images/brand-sunja.png" alt="순자국밥"></div>
           <p class="copy">한 그릇에 담긴 순자엄마의 마음</p>
@@ -693,24 +753,24 @@
     <div class="sgrid">
       <div class="scard pill rv">
         <span class="pnum">01</span>
-        <div class="viz"><div class="combo"><span class="a">국밥</span><i>+</i><span class="b"><em>냉면</em><em>김치찜</em></span></div></div>
         <h3>처방하는 본사</h3>
         <p class="pl">매장을 진단하고 브랜드 조합을 처방합니다.</p>
+        <div class="viz"><div class="combo" id="combo"><span class="cb" style="background:#de7736"><em>국밥</em></span><i>+</i><span class="cb" style="background:#2f6fb5"><em>냉면</em></span></div></div>
         <p>상권, 주방설비, 영업시간, 인력을 보고 “이 매장은 국밥+냉면, 저 매장은 국밥+김치찜”으로 처방합니다. 팔 것이 하나뿐인 단일 브랜드 본사는 구조상 할 수 없는 일입니다.</p>
         <ul><li>상권 · 주방설비 · 영업시간 · 인력 진단</li><li>상권별 배달 수요 데이터 (한식 브랜드 중심)</li></ul>
       </div>
       <div class="scard pill rv d1">
         <span class="pnum">02</span>
-        <div class="viz"><div class="big"><span class="cnt" data-to="30">30</span>%<small>원가율 설계</small></div></div>
         <h3>진짜 돈 버는 장사</h3>
         <p class="pl">진짜 돈 버는 장사를 위해, 구조부터 설계합니다.</p>
+        <div class="viz"><div class="big"><span class="cnt" data-to="30">30</span>%<small>원가율 설계</small></div></div>
         <ul><li>브랜드 원가율 30% 설계</li><li>샵인샵, 브랜드로 매출을 더하다</li><li>로열티 정액 월 20만원 (월 매출 3천만원 이상 시 지급)</li><li>가맹비 면제</li><li>해지위약금 없음, 충분히 느끼고 누려본 뒤 판단하세요</li></ul>
       </div>
       <div class="scard pill rv d2">
         <span class="pnum">03</span>
-        <div class="viz"><img class="labicon" src="images/bogalab-logo.png" alt="보가LAB"></div>
         <h3>사장님 일을 줄이는 본사</h3>
         <p class="pl">운영 효율화, 보가LAB이 지원합니다.</p>
+        <div class="viz"><img class="labicon" src="images/bogalab-logo.png" alt="보가LAB"></div>
         <ul class="chips"><li>통합솔루션</li><li>리뷰 답글</li><li>광고 조정</li><li>손익 관리</li><li>인력 관리</li><li>문의 응대</li></ul>
       </div>
     </div>
@@ -738,12 +798,35 @@
   </div>
 </section>
 
+<!-- ============ PROFIT SIMULATION ============ -->
+<!-- ※ 기본값은 회사소개서(순자국밥 기준) 값입니다. 아래 스크립트의 PROFIT_MODES 에서 수정하세요. -->
+<section class="profit" id="profit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow rv">PROFIT</span><h2 class="h2 rv d1">운영 방식에 따라<br><em>달라지는 수익 구조.</em></h2><p class="lead rv d2" style="margin-top:14px">단독 매장과 기존 매장 샵인샵,<br>투자부터 운영까지 다르니 따로 계산합니다.</p></div>
+      <div class="ptabs rv" role="tablist" aria-label="운영 방식"><button role="tab" class="on" aria-selected="true" data-mode="solo">단독 매장</button><button role="tab" aria-selected="false" data-mode="shop">기존 매장 샵인샵</button></div>
+    </div>
+    <div class="pgrid rv">
+      <div class="p-in" id="p-in"></div>
+      <div class="p-out">
+        <small id="p-pl">월 예상 이익 · 점주 노동비 반영 전</small>
+        <div class="pbig"><span id="p-profit">0</span>만 원</div>
+        <b class="prate"><span id="p-ml">이익률</span> <span id="p-rate">0</span>%</b>
+        <div class="donut" id="p-donut"><div class="dhole"><small>이익</small><b id="p-dr">0%</b></div></div>
+        <ul class="plegend" id="p-legend"></ul>
+        <div class="ptotal"><div><span id="p-tl">월 총비용</span><b id="p-total">0만 원</b></div><div><span id="p-invl">신규 투자비</span><b id="p-inv">3,200만 원</b></div></div>
+      </div>
+    </div>
+    <p class="pnote rv">기본값은 기획서(순자국밥) 기준입니다. 계산 결과는 참고값이며 수익을 보장하지 않습니다. 세금·보증금·초도 재고·운전자금은 포함하지 않았으며, 투자비는 VAT 별도입니다.</p>
+  </div>
+</section>
+
 <!-- ============ FRANCHISE COST ============ -->
 <section class="fran" id="franchise">
   <div class="wrap">
     <div class="sec-head">
       <div><span class="eyebrow rv">OPENING BUDGET</span><h2 class="h2 rv d1">개설비용 안내</h2></div>
-      <p class="lead rv d2" style="max-width:440px"><b style="color:var(--ink)">운영 방식에 따라 달라지는 수익 구조.</b><br>신규 개설과 샵인샵(업종변경)의 항목별 참고 예산입니다. (순자국밥 기준 · VAT 별도)</p>
+      <p class="lead rv d2" style="max-width:440px">신규 개설과 샵인샵(업종변경)의 항목별 참고 예산입니다. (순자국밥 기준 · VAT 별도)</p>
     </div>
     <div class="fgrid">
       <div class="fhi rv">
@@ -857,7 +940,7 @@
 
 <div class="bar" id="bar">
   <div><div class="t1">순자국밥 · 고명희냉면 · 육연회담</div><div class="t2">가맹비 면제 · 해지위약금 없음</div></div>
-  <div class="acts"><a href="#franchise" class="btn btn-sub">개설비용 보기</a><a href="#contact" class="btn btn-primary">문의하기</a></div>
+  <div class="acts"><a href="#profit" class="btn btn-sub">수익 계산해보기</a><a href="#contact" class="btn btn-primary">문의하기</a></div>
 </div>
 <div class="toast" id="toast"></div>
 
@@ -1011,14 +1094,14 @@ const BRAND_LINKS = {
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const ORDER = ['sunja', 'go', 'yuk'];
   const B = {
-    sunja: { color: '#de7736', badge: 'MAIN BRAND · 국밥', photo: 'images/menu-19.jpg',
+    sunja: { color: '#de7736', badge: 'BRAND 1 · 국밥', photo: 'images/menu-19.jpg',
       title: '한 그릇에 담긴<br>순자엄마의 마음', desc: '넉넉히 담아주는 엄마의 포근함처럼, 든든하고 따뜻한 국밥 한 그릇을 만듭니다.',
       str: [['집밥 같은 든든함', '맛있게 익어가는 한 그릇의 온기, 넉넉히 담아주는 포근함, 오래 곁을 지켜준 집밥의 든든함을 담았습니다.'],
             ['13가지 메뉴 라인업', '국밥 6종부터 갈비탕 · 김치찌개 · 보쌈수육 · 순대한상까지, 한 주방에서 내는 13가지 메뉴로 구성했습니다.'],
-            ['처방의 중심 브랜드', '국밥 + 냉면, 국밥 + 김치찜처럼 다른 브랜드와 조합하기 좋은 보통의가치의 메인 브랜드입니다.']],
+            ['다른 브랜드와 잘 맞는 조합', '국밥 + 냉면, 국밥 + 김치찜처럼 다른 브랜드와 조합하기 좋은 국밥 브랜드입니다.']],
       cats: null, note: '※ 메뉴 구성과 가격은 매장에 따라 다를 수 있습니다.',
       menu: [['19','얼큰순자국밥','13,000원'],['22','돼지국밥','12,000원'],['25','얼큰돼지국밥','13,000원'],['28','살코기국밥','12,000원'],['31','얼큰살코기국밥','13,000원'],['34','순대국밥','12,000원'],['39','갈비탕','14,000원',1],['42','장터소국밥','14,000원'],['45','김치찌개','14,000원'],['49','보쌈수육','12,000원'],['52','순대한상','9,000원'],['55','함박스테이크','4,000원'],['58','고기왕만두','6,000원']] },
-    go: { color: '#2f6fb5', badge: 'BRAND · 냉면', photo: 'images/menu-go-1.jpg',
+    go: { color: '#2f6fb5', badge: 'BRAND 2 · 냉면', photo: 'images/menu-go-1.jpg',
       title: '30년의 노하우,<br>한 그릇의 냉면', desc: '시원하고 깔끔한 육수에 정성 가득한 고명. 사계절 찾게 되는 냉면 브랜드입니다.',
       str: [['30년 전통 수제 레시피', '30년 동안 지켜온 수제 레시피 그대로 만듭니다.'],
             ['과일로 우려낸 육수', '기성 육수 대신 싱싱한 과일을 직접 우려낸 육수와 과일 단맛 다대기로, 먹고 나서도 속이 편안합니다.'],
@@ -1026,7 +1109,7 @@ const BRAND_LINKS = {
       cats: [['냉면', ['고명희냉면','물냉면','비빔냉면','불냉면']], ['사이드', ['등심돈가스','고기 · 김치찜만두','고기 · 김치 만두튀김','미니 모듬전']]],
       note: '※ 메뉴 구성은 매장에 따라 다를 수 있습니다.',
       menu: [['go-1','고명희냉면','시그니처',1],['go-2','물냉면','냉면'],['go-3','비빔냉면','냉면'],['go-4','불냉면','냉면'],['go-5','고기 · 김치찜만두','사이드'],['go-6','등심돈가스','사이드']] },
-    yuk: { color: '#c8323a', badge: 'BRAND · 육회 · 연어 · 초밥', photo: 'images/hero.jpg',
+    yuk: { color: '#c8323a', badge: 'BRAND 3 · 육회 · 연어 · 초밥', photo: 'images/hero.jpg',
       title: '육회와 초밥이<br>만나는 자리', desc: '신선한 육회와 연어, 초밥을 한 그릇으로 즐기는 브랜드입니다.',
       str: [['매일 가락시장 공수', '매일 가락시장에서 직접 공수합니다.'],
             ['당일 조리 원칙', '그날 들어온 재료는 그날 조리하고 판매합니다. 다음 날로 넘기는 재료가 없습니다.'],
@@ -1068,6 +1151,98 @@ const BRAND_LINKS = {
   body.addEventListener('click', e => { const a = e.target.closest('[data-mfran]'); if (!a) return; e.preventDefault(); close(); $('#f-type').value = FRAN[a.dataset.mfran]; setTimeout(() => $('#contact').scrollIntoView({ behavior: 'smooth' }), 80); });
   $$('[data-bopen]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); open(a.dataset.bopen); }));
   $$('.bcard').forEach(c => { const k = c.querySelector('[data-bopen]')?.dataset.bopen; if (!k) return; c.querySelectorAll('.ph, .blogo').forEach(el => el.addEventListener('click', () => open(k))); });
+})();
+</script>
+<script>
+/* =================== 처방 조합 칩: 다양한 조합으로 계속 바뀜 =================== */
+(() => {
+  const box = document.getElementById('combo'); if (!box) return;
+  const C = { '국밥': '#de7736', '냉면': '#2f6fb5', '김치찜': '#c0392b', '초밥': '#2a9d8f', '아구찜': '#8e3b6e' };
+  const COMBOS = [['국밥','냉면'],['국밥','김치찜'],['냉면','초밥'],['김치찜','아구찜'],['국밥','초밥'],['냉면','아구찜'],['초밥','김치찜'],['국밥','아구찜']];
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const cbs = [...box.querySelectorAll('.cb')];
+  let i = 0;
+  setInterval(() => {
+    const prev = COMBOS[i]; i = (i + 1) % COMBOS.length; const next = COMBOS[i];
+    cbs.forEach((cb, j) => {
+      if (prev[j] === next[j]) return;
+      setTimeout(() => {
+        cb.classList.add('out');
+        setTimeout(() => { cb.querySelector('em').textContent = next[j]; cb.style.backgroundColor = C[next[j]]; cb.classList.remove('out'); cb.classList.add('pre');
+          requestAnimationFrame(() => requestAnimationFrame(() => cb.classList.remove('pre'))); }, 330);
+      }, j * 140);
+    });
+  }, 2400);
+})();
+</script>
+<script>
+/* =================== 수익 시뮬레이션 =================== */
+/* 단위: 만 원 / 비율: 매출 대비 % . 로열티는 월 매출 3천만원 이상일 때 정액 월 20만원 */
+const PROFIT_MODES = {
+  solo: { S: { l: '월매출 (전체)', min: 1000, max: 10000, step: 100, v: 4000, minL: '1,000만 원', maxL: '1억 원' },
+    subs: [{ k: 'food', l: '식재료·포장', min: 15, max: 45, v: 30 }, { k: 'labor', l: '직원 인건비', min: 0, max: 25, v: 0, tier: 1 }, { k: 'deliv', l: '배달수수료', min: 0, max: 50, v: 40 }, { k: 'etc', l: '기타', min: 0, max: 10, step: .5, v: 1.5 }],
+    fix: { k: 'fixed', l: '고정비 (월)', min: 0, max: 500, step: 10, v: 110 },
+    pl: '월 예상 이익 · 점주 노동비 반영 전', ml: '이익률', tl: '월 총비용', invL: '신규 투자비', inv: '3,200만 원' },
+  shop: { S: { l: '추가 월매출 (샵인샵 브랜드)', min: 500, max: 5000, step: 100, v: 2000, minL: '500만 원', maxL: '5,000만 원' },
+    subs: [{ k: 'food', l: '식재료·포장', min: 15, max: 45, v: 30 }, { k: 'labor', l: '추가 인건비', min: 0, max: 20, v: 3 }, { k: 'deliv', l: '배달수수료', min: 0, max: 50, v: 40 }],
+    fix: { k: 'fixed', l: '추가 임대료·잡비 (월)', min: 0, max: 300, step: 10, v: 0 },
+    pl: '추가 현금 수익 · 월', ml: '추가 매출 대비', tl: '월 총비용', invL: '추가 투자비', inv: '300만 원' },
+};
+(() => {
+  const $ = s => document.querySelector(s);
+  const box = $('#p-in'); if (!box) return;
+  const ROY = { amount: 20, threshold: 3000 };
+  const laborAt = S => S <= 4000 ? 0 : S < 6000 ? 8 : S < 8000 ? 9 : 10;
+  const COL = { food: '#cbb8da', labor: '#a587bd', deliv: '#e9e1ef', etc: '#d8cce2', fixed: '#7f5e98', roy: '#b49cc8', pr: '#56007a' };
+  const NAMES = { food: '식재료·포장', labor: '인건비', deliv: '배달수수료', etc: '기타', fixed: '고정비', roy: '로열티', pr: '이익' };
+  const won = n => Math.round(n).toLocaleString('ko-KR');
+  let mode = 'solo', vals = {}, shownProfit = 0, raf = 0;
+  const pct = (el) => { const p = (el.value - el.min) / (el.max - el.min) * 100; el.style.setProperty('--p', p + '%'); };
+  const fmtV = (k, v) => k === 'S' || k === 'fixed' ? won(v) + '만 원' : (Math.round(v * 10) / 10) + '%';
+  const slider = (k, o, big) => `<div class="${big ? 'pmain' : 'psl'}"><label ${big ? 'class="ph2"' : ''} for="pi-${k}"><span>${o.l}${o.tier ? '<small>매출 구간별 자동</small>' : ''}</span><output data-o="${k}"></output></label><input class="rg${big ? ' big' : ''}" type="range" id="pi-${k}" data-k="${k}" min="${o.min}" max="${o.max}" step="${o.step || 1}" value="${vals[k]}">${big ? `<div class="prange"><span>${o.minL}</span><span>${o.maxL}</span></div>` : ''}</div>`;
+  const build = () => {
+    const M = PROFIT_MODES[mode]; vals = { S: M.S.v, fixed: M.fix.v }; M.subs.forEach(s => vals[s.k] = s.v);
+    if (mode === 'solo') vals.labor = laborAt(vals.S);
+    box.innerHTML = slider('S', M.S, true) + `<p class="psubs-h">세부 비율<small>매출 대비 · 막대를 움직여 조정</small></p><div class="psubs">${M.subs.map(s => slider(s.k, s)).join('')}${slider('fixed', M.fix)}</div>
+      <div class="proy"><div><b>로열티 정액 월 20만원</b><small>월 매출 3천만원 이상 시 지급 · 가맹비 면제</small></div><span class="st" id="p-roy">미적용</span></div>
+      <button class="preset" type="button" id="p-reset">기본값으로 되돌리기</button>`;
+    $('#p-pl').textContent = M.pl; $('#p-ml').textContent = M.ml; $('#p-tl').textContent = M.tl; $('#p-invl').textContent = M.invL; $('#p-inv').textContent = M.inv;
+    box.querySelectorAll('input.rg').forEach(el => { pct(el); el.addEventListener('input', () => { vals[el.dataset.k] = +el.value; if (el.dataset.k === 'S' && mode === 'solo') { vals.labor = laborAt(vals.S); const L = box.querySelector('[data-k="labor"]'); L.value = vals.labor; pct(L); } pct(el); update(); }); });
+    $('#p-reset').addEventListener('click', () => { build(); });
+    update(true);
+  };
+  const update = (instant) => {
+    const M = PROFIT_MODES[mode], S = vals.S;
+    box.querySelectorAll('output[data-o]').forEach(o => o.textContent = fmtV(o.dataset.o, vals[o.dataset.o]));
+    const roy = S >= ROY.threshold ? ROY.amount : 0;
+    const share = { food: vals.food || 0, labor: vals.labor || 0, deliv: vals.deliv || 0 };
+    if (mode === 'solo') share.etc = vals.etc || 0;
+    share.fixed = vals.fixed / S * 100; share.roy = roy / S * 100;
+    const costPct = Object.values(share).reduce((a, b) => a + b, 0);
+    const total = S * costPct / 100, profit = S - total, rate = profit / S * 100;
+    share.pr = Math.max(0, rate);
+    // 도넛
+    let acc = 0; const stops = [];
+    Object.keys(share).forEach(k => { const v = Math.max(0, share[k]); if (!v) return; stops.push(`${COL[k]} ${acc}% ${acc + v}%`); acc += v; });
+    if (acc < 100) stops.push(`#ece7f0 ${acc}% 100%`);
+    $('#p-donut').style.background = `conic-gradient(${stops.join(',')})`;
+    $('#p-dr').textContent = (Math.round(rate * 10) / 10) + '%';
+    $('#p-legend').innerHTML = Object.keys(share).map(k => `<li class="${k === 'pr' ? 'pr' : ''}"><span><i style="background:${COL[k]}"></i>${NAMES[k]}</span><b>${(Math.round((k === 'pr' ? rate : share[k]) * 10) / 10).toFixed(1)}%</b></li>`).join('');
+    $('#p-rate').textContent = (Math.round(rate * 10) / 10).toFixed(1);
+    $('#p-total').textContent = won(total) + '만 원';
+    const st = $('#p-roy'); st.textContent = roy ? '적용 중' : '미적용'; st.classList.toggle('on', !!roy);
+    $('.pbig').classList.toggle('neg', profit < 0);
+    // 숫자 굴러가기
+    cancelAnimationFrame(raf); const from = shownProfit, to = profit, t0 = performance.now(), dur = instant ? 0 : 450;
+    const tick = t => { const p = dur ? Math.min(1, (t - t0) / dur) : 1, v = from + (to - from) * (1 - Math.pow(1 - p, 3)); shownProfit = v; $('#p-profit').textContent = won(v); if (p < 1) raf = requestAnimationFrame(tick); };
+    raf = requestAnimationFrame(tick);
+  };
+  document.querySelectorAll('.ptabs button').forEach(b => b.addEventListener('click', () => {
+    if (b.dataset.mode === mode) return; mode = b.dataset.mode;
+    document.querySelectorAll('.ptabs button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
+    build();
+  }));
+  build();
 })();
 </script>
 </body>
