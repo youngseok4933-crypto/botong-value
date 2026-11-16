@@ -3,20 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="robots" content="noindex, nofollow" /><!-- 시안 단계: 검색 노출 막음. 실제 오픈 시 삭제 -->
-<title>보통의가치 | 지극히 평범한 보통의 사람들이 만들어내는 비범한 가치</title>
+<link rel="canonical" href="https://xn--o39am53a9yh3ih6oe.com/" />
+<title>보통의가치 | 지극히 평범한 사람들이 만들어 내는 비범의 가치</title>
 <meta name="description" content="㈜보통의가치는 순자국밥, 고명희냉면, 육연회담을 운영하는 한식 프랜차이즈 기업입니다. 브랜드의 시작부터 운영의 완성까지, 보통의가치가 설계합니다." />
 <meta property="og:title" content="㈜보통의가치" />
-<meta property="og:description" content="지극히 평범한 보통의 사람들이 만들어내는 비범한 가치" />
-<!-- ※ 도메인 연결 후 아래 주소 3곳을 https://보통의가치.com 으로 바꾸세요 -->
+<meta property="og:description" content="지극히 평범한 사람들이 만들어 내는 비범의 가치" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="보통의가치" />
-<meta property="og:image" content="https://youngseok4933-crypto.github.io/botong-value/images/og.jpg" />
+<meta property="og:image" content="https://xn--o39am53a9yh3ih6oe.com/images/og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://youngseok4933-crypto.github.io/botong-value/" />
+<meta property="og:url" content="https://xn--o39am53a9yh3ih6oe.com/" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://youngseok4933-crypto.github.io/botong-value/images/og.jpg" />
+<meta name="twitter:image" content="https://xn--o39am53a9yh3ih6oe.com/images/og.jpg" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2356007a'/%3E%3Cg stroke='white' stroke-width='3.2' stroke-linecap='round'%3E%3Cpath d='M16 8v16M9.1 12l13.8 8M9.1 20l13.8-8'/%3E%3C/g%3E%3C/svg%3E" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 <style>
@@ -522,7 +521,7 @@
   .hero::before{width:520px;height:420px;left:-140px;top:-120px;background:rgba(255,206,170,.45);animation:drift 13s ease-in-out infinite alternate}
   .hero::after{width:560px;height:440px;right:-160px;top:-140px;background:rgba(206,176,232,.38);animation:drift 16s ease-in-out infinite alternate-reverse}
   @keyframes drift{to{transform:translate(120px,80px) scale(1.18)}}
-  .hero .wrap,.hero .marquee{position:relative;z-index:1}
+  .hero .wrap,.hero .marquee,.hero .bstrip{position:relative;z-index:1}
   /* 히어로 제목: 흐릿하게 떠올랐다가 또렷해지고, '비범한 가치'만 늦게 보라색으로 물듭니다 */
   .hero h1.rv{opacity:0;transform:none;filter:blur(14px);letter-spacing:-.005em;transition:opacity 1.6s ease,filter 1.6s ease,letter-spacing 2.2s var(--ease2)}
   .hero h1.rv.go{opacity:1;filter:blur(0);letter-spacing:-.04em}
@@ -612,6 +611,112 @@
     .hero h1.rv{filter:none!important;opacity:1!important;transition:none!important}
     .ln>span,.mitem,.bcard .ph img,.eq-mid span{transform:none!important;clip-path:none!important;opacity:1!important;transition:none!important}
   }
+
+  /* =================== v13 수정 (홈페이지수정 요청 1~16) =================== */
+  .hero h1{font-size:clamp(34px,5.6vw,72px)}
+  .hero h1 .u{white-space:nowrap}
+  .hero-cta .btn{min-width:170px}
+  br.pc{display:inline}
+  @media (max-width:640px){.hero h1{font-size:8.3vw}br.pc{display:none}}
+  /* 4. 브랜드 띠 */
+  .bstrip{margin-top:84px;padding-bottom:100px;overflow:hidden;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+  .bstrip.drag{cursor:grabbing}
+  .bs-track{display:flex;gap:14px;width:max-content;will-change:transform}
+  .bs{flex:none;height:300px;border-radius:24px;overflow:hidden;position:relative}
+  .bs.photo{width:300px}
+  .bs.photo img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+  .bs.brand{width:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:30px;text-align:center}
+  .bs.brand img{max-width:250px;max-height:70px;width:auto;pointer-events:none}
+  .bs.brand.yuk img{max-height:116px}
+  .bs.brand p{font-size:15px;font-weight:600;line-height:1.6}
+  .bs.sunja{background:#de7736;color:#fff}
+  .bs.go{background:#fff;border:1px solid var(--line);color:#3a3640}
+  .bs.yuk{background:#141414;color:#fff}
+  @media (max-width:640px){.bstrip{margin-top:56px;padding-bottom:72px}.bs{height:220px}.bs.photo{width:220px}.bs.brand{width:300px;gap:14px}.bs.brand img{max-width:190px;max-height:52px}.bs.brand.yuk img{max-height:86px}.bs.brand p{font-size:13px}}
+  /* 5. 스토리 문단 + 반짝이 */
+  .story-top .lead{max-width:760px;margin:0 auto}
+  .shine{position:relative;background:linear-gradient(110deg,var(--brand) 0%,var(--brand) 38%,#e2c2f2 50%,var(--brand) 62%,var(--brand) 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 3.2s ease-in-out infinite}
+  .shine::after{content:"";position:absolute;right:-.12em;top:-.38em;width:.32em;height:.32em;background:var(--brand);-webkit-mask:var(--ast) center/contain no-repeat;mask:var(--ast) center/contain no-repeat;animation:twinkle 1.8s ease-in-out infinite}
+  @keyframes shine{0%{background-position:100% 0}100%{background-position:0 0}}
+  @keyframes twinkle{0%,100%{transform:scale(.55) rotate(0);opacity:.45}50%{transform:scale(1.1) rotate(90deg);opacity:1}}
+  /* 6. = 기호 중앙 + 보라/흰 반복, 비범한 가치 카드 보라 */
+  .equation{align-items:center}
+  .eq-box.hi{background:var(--brand);color:#fff}
+  .eq-box.hi .w{color:rgba(255,255,255,.7)}
+  .eq-box.hi h3{color:#fff}
+  .eq-box.hi p{color:rgba(255,255,255,.86)}
+  .eq-mid span.eqc{flex-direction:column;gap:8px;font-size:0;line-height:0;box-shadow:0 0 0 2px var(--brand),0 12px 30px rgba(86,0,122,.25)}
+  .eq-mid .eqc i{display:block;width:26px;height:5px;border-radius:3px;background:currentColor}
+  .eq-mid.in span.eqc{animation:eqflip 2.6s ease-in-out 1.4s infinite}
+  @keyframes eqflip{0%,40%{background:var(--brand);color:#fff}50%,90%{background:#fff;color:var(--brand)}100%{background:var(--brand);color:#fff}}
+  @media (max-width:640px){.eq-mid .eqc i{width:20px;height:4px}.eq-mid span.eqc{gap:6px}}
+  /* 7. 회사소개 사진 슬라이드 */
+  .about-head{text-align:center;max-width:760px;margin:0 auto 52px}
+  .about-head .h2{margin:18px 0 14px}
+  .bizsl{position:relative;padding-bottom:56px}
+  .bz-view{overflow:hidden;border-radius:28px;touch-action:pan-y}
+  .bz-track{display:flex;transition:transform .7s cubic-bezier(.16,.84,.24,1)}
+  .bz{flex:0 0 100%;position:relative;height:520px}
+  .bz img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+  .bz-box{position:absolute;left:96px;bottom:48px;width:min(420px,calc(100% - 96px));background:var(--brand);color:#fff;padding:32px 34px;border-radius:20px;box-shadow:0 20px 50px rgba(40,0,60,.3)}
+  .bz-box .n{font-size:13px;font-weight:800;letter-spacing:.12em;opacity:.7}
+  .bz-box h3{font-size:30px;font-weight:800;letter-spacing:-.03em;margin:8px 0 4px}
+  .bz-box em{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.16em;opacity:.75}
+  .bz-box ul{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:8px}
+  .bz-box li{font-size:15px;padding-left:16px;position:relative;line-height:1.5}
+  .bz-box li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:#fff}
+  .bz-arrow{position:absolute;top:calc(50% - 28px);transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.94);font-size:28px;line-height:1;color:var(--ink);box-shadow:0 6px 20px rgba(0,0,0,.14);z-index:2;transition:.25s}
+  .bz-arrow.prev{left:18px}.bz-arrow.next{right:18px}
+  .bz-arrow:hover{background:var(--brand);color:#fff}
+  .bz-dots{position:absolute;left:0;right:0;bottom:16px;display:flex;justify-content:center;gap:8px}
+  .bz-dots button{width:8px;height:8px;border-radius:999px;background:#d6cfdc;transition:.3s}
+  .bz-dots button.on{width:28px;background:var(--brand)}
+  @media (max-width:640px){.bz{height:auto;display:flex;flex-direction:column;background:var(--brand)}.bz img{height:230px}.bz-box{position:static;width:auto;border-radius:0;padding:24px 22px 26px;box-shadow:none}.bz-box h3{font-size:24px}.bz-arrow{top:115px;width:40px;height:40px;font-size:22px}}
+  /* 9. 커밍순 크게 */
+  .soon-head{margin:56px 0 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .soon-head b{font-size:20px;font-weight:800;letter-spacing:-.02em}
+  .soon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .sn{position:relative;overflow:hidden;background:#fff;border:2px dashed #d8cde2;border-radius:24px;padding:30px 30px 28px;min-height:180px;display:flex;flex-direction:column;justify-content:flex-end;transition:.3s}
+  .sn:hover{border-color:var(--brand);transform:translateY(-4px)}
+  .sn .tag{position:absolute;top:24px;left:28px;font-size:12px;font-weight:800;letter-spacing:.1em;color:#fff;background:var(--brand);padding:6px 12px;border-radius:999px;animation:blink 2.4s ease-in-out infinite}
+  .sn b{font-size:clamp(24px,2.4vw,32px);font-weight:800;letter-spacing:-.03em}
+  .sn small{font-size:14px;color:var(--muted);margin-top:4px}
+  .sn::after{content:"";position:absolute;right:-26px;bottom:-26px;width:130px;height:130px;background:var(--brand);opacity:.06;-webkit-mask:var(--ast) center/contain no-repeat;mask:var(--ast) center/contain no-repeat}
+  @media (max-width:900px){.soon-grid{grid-template-columns:1fr;gap:12px}.sn{min-height:120px;padding:22px 24px}.sn .tag{top:20px;left:auto;right:22px}}
+  /* 10~11. 경쟁력 */
+  .st-head{text-align:center;max-width:980px;margin:0 auto 60px}
+  .st-head .h2{margin:18px 0 16px;font-size:clamp(28px,4.4vw,56px)}
+  .st-head .mk{background:linear-gradient(transparent 60%,rgba(86,0,122,.16) 60%);padding:0 .06em}
+  .sgrid .scard.pill{padding:0;overflow:hidden}
+  .sc-ph{position:relative;height:220px;overflow:hidden}
+  .sc-ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+  .scard:hover .sc-ph img{transform:scale(1.05)}
+  .sc-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(25,0,35,.55))}
+  .sc-ov{position:absolute;left:22px;bottom:20px;z-index:1}
+  .sc-ov .big{color:#fff;font-size:58px;line-height:1}
+  .sc-ov .big small{color:#fff}
+  .sc-ov .ic{width:58px;height:58px;border-radius:18px;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+  .sc-ov .combo span{height:44px;font-size:16px}
+  .sc-tx{padding:26px 28px 30px}
+  .scard .sc-tx h3{font-size:22px;font-weight:800;letter-spacing:-.02em;margin:0 0 8px}
+  .sc-tx h3 b{color:var(--brand);margin-right:2px}
+  /* 12. 보가LAB */
+  .lab-intro{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;margin-bottom:44px}
+  .lab-logo{width:72px;height:72px;border-radius:20px;margin-bottom:22px;box-shadow:0 12px 26px rgba(86,0,122,.2)}
+  .li-l .h2{margin:14px 0 16px}
+  .li-l .btn{margin-top:26px}
+  .li-r{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .ls{background:var(--bg2);border-radius:20px;padding:24px 22px}
+  .ls b{font-size:12px;font-weight:800;color:var(--brand);letter-spacing:.1em}
+  .ls h4{font-size:18px;font-weight:800;margin:10px 0 6px;letter-spacing:-.02em}
+  .ls p{font-size:14px;color:var(--muted);line-height:1.6}
+  .lab-feats{margin:0 0 32px}
+  @media (max-width:900px){.lab-intro{grid-template-columns:1fr;gap:28px}}
+  @media (max-width:640px){.li-r{grid-template-columns:1fr}}
+  /* 13·16. 개설비용 표 */
+  .fgrid.one{display:block;max-width:920px;margin:0 auto}
+  .table th{text-align:center!important}
+  .table td:not(:first-child){text-align:center!important}
 </style>
 </head>
 <body>
@@ -626,7 +731,7 @@
       <a href="#strength">경쟁력</a>
       <a href="#bogalab">보가LAB</a>
       <a href="#franchise">창업안내</a>
-      <a href="#news">소식</a>
+      
     </nav>
     <div class="hd-right">
       <a href="#contact" class="btn btn-primary btn-sm">문의하기</a>
@@ -635,7 +740,7 @@
   </div>
 </header>
 <nav class="drawer" id="drawer">
-  <a href="#about">회사소개</a><a href="#brands">브랜드</a><a href="#strength">경쟁력</a><a href="#bogalab">보가LAB</a><a href="#franchise">창업안내</a><a href="#news">소식</a>
+  <a href="#about">회사소개</a><a href="#brands">브랜드</a><a href="#strength">경쟁력</a><a href="#bogalab">보가LAB</a><a href="#franchise">창업안내</a>
   <a href="#contact" class="btn btn-primary">문의하기</a>
 </nav>
 
@@ -643,22 +748,23 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <h1 class="rv d1">지극히 평범한<br class="mo"> 보통의 사람들이<br>만들어내는 <span class="u">비범한 가치</span></h1>
+    <h1 class="rv d1">지극히 <span class="u">평범한 사람</span>들이<br>만들어 내는 <span class="u">비범의 가치</span></h1>
     <p class="lead rv d2">매장을 진단하고, 사장님 가게에 맞는 브랜드 조합을 처방합니다.<br>순자국밥 · 고명희냉면 · 육연회담을 만드는 한식 프랜차이즈 기업입니다.</p>
     <div class="hero-cta rv d3">
       <a href="#brands" class="btn btn-primary">브랜드 보기</a>
       <a href="#franchise" class="btn btn-line">창업 안내</a>
     </div>
   </div>
-  <div class="marquee" id="marquee">
-    <div class="mq"><img src="images/menu-19.jpg" alt="얼큰순자국밥"><span class="tag">순자국밥</span></div>
-    <div class="mq txt brand"><b>한 그릇에 담긴<br>순자엄마의 마음</b><small>BRAND 1 · 순자국밥</small></div>
-    <div class="mq"><img src="images/naengmyeon.jpg" alt="고명희냉면"><span class="tag">고명희냉면</span></div>
-    <div class="mq txt cream"><b>30년의 노하우,<br>한 그릇의 냉면</b><small>BRAND · 고명희냉면</small></div>
-    <div class="mq"><img src="images/hero.jpg" alt="육연회담 육회"><span class="tag">육연회담</span></div>
-    <div class="mq txt white"><b>육회 · 연어 · 초밥</b><small>BRAND · 육연회담</small></div>
-    <div class="mq"><img src="images/menu-49.jpg" alt="보쌈수육"><span class="tag">보쌈수육</span></div>
-    <div class="mq"><img src="images/menu-39.jpg" alt="갈비탕"><span class="tag">갈비탕</span></div>
+  <!-- 브랜드 띠: 브랜드 카드 → 사진 순서, 자동으로 흐르고 손으로 넘길 수 있음 -->
+  <div class="bstrip" id="bstrip" aria-label="보통의가치 브랜드">
+    <div class="bs-track" id="bstrack">
+      <div class="bs brand sunja"><img src="images/brand-sunja-white.png" alt="순자국밥"><p>한 그릇에 담긴 순자엄마의 마음</p></div>
+      <div class="bs photo"><img src="images/menu-19.jpg" alt="순자국밥 얼큰순자국밥"></div>
+      <div class="bs brand go"><img src="images/brand-gomyung.png" alt="고명희냉면"><p>30년의 노하우, 한 그릇의 냉면</p></div>
+      <div class="bs photo"><img src="images/menu-go-1.jpg" alt="고명희냉면"></div>
+      <div class="bs brand yuk"><img src="images/brand-yukyeon-white.png" alt="육연회담"><p>매일 당일 공수한 싱싱한 재료로만<br>육회 · 연어 · 초밥 · 비빔밥</p></div>
+      <div class="bs photo"><img src="images/menu-yuk-1.jpg" alt="육연회담 육회"></div>
+    </div>
   </div>
 </section>
 
@@ -667,12 +773,12 @@
   <div class="wrap">
     <div class="story-top">
       <span class="eyebrow rv">ORDINARY VALUE</span>
-      <p class="big rv d1">세상을 움직이는 건<br>특별한 누군가가 아니라 <span class="hl">보통의 사람들</span>입니다</p>
-      <p class="lead rv d2">한 그릇의 국밥, 한 그릇의 냉면, 한 접시의 육회. 그 평범한 한 끼 뒤에는 매일 같은 자리에서 묵묵히 제 몫을 해내는 사람들이 있습니다. 보통의가치는 그 사람들의 성실함이 가장 비범한 가치라고 믿습니다.</p>
+      <p class="big rv d1">세상을 움직이는 건<br>특별한 누군가가 아닌<br><span class="shine">보통의 사람들</span>입니다</p>
+      <p class="lead rv d2">평범한 한 끼 뒤에는 매일 묵묵히 제 몫을 해내는 사람들이 있습니다.<br class="pc"> 보통의가치는 그 성실함이 가장 비범한 가치라고 믿습니다.</p>
     </div>
     <div class="equation">
       <div class="eq-box rv"><span class="w">ORDINARY · 보통의</span><h3>평범한 사람들</h3><p>점주, 직원, 그리고 손님. 거창하지 않아도 매일 자기 자리를 지키는 지극히 평범한 사람들이 우리 회사의 시작입니다.</p></div>
-      <div class="eq-mid rv d1"><span>=</span></div>
+      <div class="eq-mid rv d1"><span class="eqc" aria-label="같다"><i></i><i></i></span></div>
       <div class="eq-box hi rv d2"><span class="w">VALUE · 가치</span><h3>비범한 가치</h3><p>그 평범한 하루가 쌓여 누군가에게는 든든한 한 끼가 되고, 누군가에게는 삶의 터전이 되는 비범한 가치가 됩니다.</p></div>
     </div>
   </div>
@@ -681,17 +787,22 @@
 <!-- ============ ABOUT ============ -->
 <section class="about" id="about">
   <div class="wrap">
-    <div class="top">
-      <div>
-        <span class="eyebrow rv">COMPANY OVERVIEW</span>
-        <h2 class="h2 rv d1" style="margin-top:18px">'보통의가치'는<br><em>이런 곳</em>입니다</h2>
-      </div>
-      <p class="lead rv d2">브랜드의 시작부터 운영의 완성까지, 보통의가치가 설계합니다. 브랜드를 만들고, 매장 운영을 돕고, 식자재를 공급하는 일까지 본사가 직접 맡습니다.</p>
+    <div class="about-head">
+      <span class="eyebrow rv">COMPANY OVERVIEW</span>
+      <h2 class="h2 rv d1">'보통의가치'는 <em>이런 곳</em>입니다</h2>
+      <p class="lead rv d2">브랜드의 시작부터 운영의 완성까지, 보통의가치가 설계합니다.</p>
     </div>
-    <div class="biz">
-      <div class="bizcard rv"><span class="num">01</span><div><h3>브랜드 개발</h3><p>다양한 한식 프랜차이즈 브랜드를<br>기획 · 개발 · 오픈 · 관리합니다.</p></div></div>
-      <div class="bizcard rv d1"><span class="num">02</span><div><h3>운영 자동화 시스템</h3><p>통합운영 프로그램 '보가LAB'으로<br>사장님 일을 줄여드립니다.</p></div></div>
-      <div class="bizcard rv d2"><span class="num">03</span><div><h3>원가 경쟁력</h3><p>진짜 돈 버는 장사를 위해, 원가율 30%로<br>구조부터 설계합니다.</p></div></div>
+    <div class="bizsl rv" id="bizsl">
+      <div class="bz-view">
+        <div class="bz-track">
+          <div class="bz"><img src="images/about-brand.jpg" alt="메뉴를 개발하는 보통의가치 팀"><div class="bz-box"><span class="n">01</span><h3>브랜드 개발</h3><em>BRAND DEVELOPMENT</em><ul><li>한식 프랜차이즈 브랜드 기획 · 개발</li><li>메뉴 개발과 레시피 표준화</li><li>오픈부터 운영까지 관리</li></ul></div></div>
+          <div class="bz"><img src="images/about-auto.jpg" alt="태블릿으로 매출을 확인하는 사장님"><div class="bz-box"><span class="n">02</span><h3>운영 자동화 시스템</h3><em>OPERATION AUTOMATION</em><ul><li>통합운영 프로그램 '보가LAB'</li><li>리뷰 답글 · 광고 조정 · 손익 관리</li><li>사장님 일을 줄이는 본사</li></ul></div></div>
+          <div class="bz"><img src="images/about-cost.jpg" alt="식자재를 관리하는 센트럴 키친"><div class="bz-box"><span class="n">03</span><h3>원가 경쟁력</h3><em>COST COMPETITIVENESS</em><ul><li>브랜드 원가율 30% 설계</li><li>낮은 본사 물류마진</li><li>진짜 돈 버는 장사를 위한 구조</li></ul></div></div>
+        </div>
+      </div>
+      <button class="bz-arrow prev" type="button" aria-label="이전">‹</button>
+      <button class="bz-arrow next" type="button" aria-label="다음">›</button>
+      <div class="bz-dots"></div>
     </div>
   </div>
 </section>
@@ -736,9 +847,11 @@
         </div>
       </article>
     </div>
-    <div class="soon rv">
-      <b>다양한 한식 브랜드를 만들어 갑니다<small>런칭 예정 브랜드</small></b>
-      <div class="list"><span><i>SOON</i>막내해장국</span><span><i>SOON</i>큰이모김치찜</span><span><i>SOON</i>주먹아구찜</span></div>
+    <div class="soon-head rv"><span class="eyebrow">COMING SOON</span><b>다양한 한식 브랜드를 만들어 갑니다</b></div>
+    <div class="soon-grid">
+      <div class="sn rv"><span class="tag">SOON</span><b>막내해장국</b><small>해장국</small></div>
+      <div class="sn rv d1"><span class="tag">SOON</span><b>큰이모김치찜</b><small>김치찜</small></div>
+      <div class="sn rv d2"><span class="tag">SOON</span><b>주먹아구찜</b><small>아구찜</small></div>
     </div>
   </div>
 </section>
@@ -746,32 +859,23 @@
 <!-- ============ STRENGTH ============ -->
 <section class="strength" id="strength">
   <div class="wrap">
-    <div class="sec-head">
-      <div><span class="eyebrow rv">WHY BOTONG VALUE</span><h2 class="h2 rv d1">묶지 않습니다.<br class="mo"> 숨기지 않습니다.<br><em>사장님 가게에 맞는<br class="mo"> 조합</em>만 드립니다.</h2></div>
-      <p class="lead rv d2" style="max-width:400px">처방하는 본사, 진짜 돈 버는 장사, 사장님 일을 줄이는 본사. 보통의가치가 일하는 방식입니다.</p>
+    <div class="st-head">
+      <span class="eyebrow rv">WHY ORDINARY VALUE</span>
+      <h2 class="h2 rv d1"><span class="mk">묶지 않습니다.</span><br class="mo"> <span class="mk">숨기지 않습니다.</span><br><em>사장님 가게에 맞는<br class="mo"> 조합</em>만 드립니다.</h2>
+      <p class="lead rv d2">처방하는 본사 · 진짜 돈 버는 장사 · 사장님 일을 줄이는 본사</p>
     </div>
     <div class="sgrid">
       <div class="scard pill rv">
-        <span class="pnum">01</span>
-        <h3>처방하는 본사</h3>
-        <p class="pl">매장을 진단하고 브랜드 조합을 처방합니다.</p>
-        <div class="viz"><div class="combo" id="combo"><span class="cb" style="background:#de7736"><em>국밥</em></span><i>+</i><span class="cb" style="background:#2f6fb5"><em>냉면</em></span></div></div>
-        <p>상권, 주방설비, 영업시간, 인력을 보고 “이 매장은 국밥+냉면, 저 매장은 국밥+김치찜”으로 처방합니다. 팔 것이 하나뿐인 단일 브랜드 본사는 구조상 할 수 없는 일입니다.</p>
-        <ul><li>상권 · 주방설비 · 영업시간 · 인력 진단</li><li>상권별 배달 수요 데이터 (한식 브랜드 중심)</li></ul>
+        <div class="sc-ph"><img src="images/pill-rx.jpg" alt="매장을 진단하는 본사" loading="lazy"><div class="sc-ov"><div class="combo" id="combo"><span class="cb" style="background:#de7736"><em>국밥</em></span><i>+</i><span class="cb" style="background:#2f6fb5"><em>냉면</em></span></div></div></div>
+        <div class="sc-tx"><h3><b>01.</b> 처방하는 본사</h3><p class="pl">매장을 진단하고, 맞는 브랜드 조합을 처방합니다.</p><ul class="chips"><li>상권</li><li>주방설비</li><li>영업시간</li><li>인력</li><li>배달 수요 데이터</li></ul></div>
       </div>
       <div class="scard pill rv d1">
-        <span class="pnum">02</span>
-        <h3>진짜 돈 버는 장사</h3>
-        <p class="pl">진짜 돈 버는 장사를 위해, 구조부터 설계합니다.</p>
-        <div class="viz"><div class="big"><span class="cnt" data-to="30">30</span>%<small>원가율 설계</small></div></div>
-        <ul><li>브랜드 원가율 30% 설계</li><li>샵인샵, 브랜드로 매출을 더하다</li><li>로열티 정액 월 20만원 (월 매출 3천만원 이상 시 지급)</li><li>가맹비 면제</li><li>해지위약금 없음, 충분히 느끼고 누려본 뒤 판단하세요</li></ul>
+        <div class="sc-ph"><img src="images/pill-money.jpg" alt="주문이 몰리는 매장" loading="lazy"><div class="sc-ov"><div class="big"><span class="cnt" data-to="30">30</span>%<small>원가율</small></div></div></div>
+        <div class="sc-tx"><h3><b>02.</b> 진짜 돈 버는 장사</h3><p class="pl">진짜 돈 버는 장사를 위해, 구조부터 설계합니다.</p><ul class="chips"><li>원가율 30%</li><li>샵인샵 추가 매출</li><li>로열티 정액 월 20만원</li><li>가맹비 면제</li><li>해지위약금 없음</li></ul></div>
       </div>
       <div class="scard pill rv d2">
-        <span class="pnum">03</span>
-        <h3>사장님 일을 줄이는 본사</h3>
-        <p class="pl">운영 효율화, 보가LAB이 지원합니다.</p>
-        <div class="viz"><img class="labicon" src="images/bogalab-logo.png" alt="보가LAB"></div>
-        <ul class="chips"><li>통합솔루션</li><li>리뷰 답글</li><li>광고 조정</li><li>손익 관리</li><li>인력 관리</li><li>문의 응대</li></ul>
+        <div class="sc-ph"><img src="images/pill-easy.jpg" alt="휴대폰으로 매장을 관리하는 사장님" loading="lazy"><div class="sc-ov"><span class="ic"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span></div></div>
+        <div class="sc-tx"><h3><b>03.</b> 사장님 일을 줄이는 본사</h3><p class="pl">운영 효율화, 보가LAB이 대신합니다.</p><ul class="chips"><li>리뷰 답글</li><li>광고 조정</li><li>손익 관리</li><li>인력 관리</li><li>문의 응대</li></ul></div>
       </div>
     </div>
   </div>
@@ -780,9 +884,20 @@
 <!-- ============ BOGA LAB ============ -->
 <section class="lab" id="bogalab">
   <div class="wrap">
-    <div class="lab-head">
-      <img src="images/bogalab-logo.png" alt="보가LAB 로고" class="rv">
-      <div><span class="eyebrow rv">BOGA LAB</span><h2 class="h2 rv d1" style="margin-top:12px">보가LAB : 매출 · 운영 <em>통합관리시스템</em></h2><p class="lead rv d2" style="margin-top:10px">현장에서 쌓은 경험을, 매장이 활용할 수 있는 기준으로</p></div>
+    <div class="lab-intro">
+      <div class="li-l">
+        <img src="images/bogalab-logo.png" alt="보가LAB 로고" class="lab-logo rv">
+        <span class="eyebrow rv">BOGA LAB</span>
+        <h2 class="h2 rv d1">보통의가치가 직접 만든<br><em>매장 통합운영 프로그램</em></h2>
+        <p class="lead rv d2">직접 매장을 운영하며 꼭 필요했던 기능을 하나씩 만들었습니다. 배달앱 매출부터 리뷰, 노출 순위까지 매장 운영의 모든 것을 한 화면에서 확인합니다.</p>
+        <a class="btn btn-primary rv d3" href="https://www.xn--o39a44td9d.com/" target="_blank" rel="noopener">보가LAB 바로가기 ↗</a>
+      </div>
+      <div class="li-r">
+        <div class="ls rv"><b>01</b><h4>현장에서 만든 프로그램</h4><p>직접 장사하며 필요했던 기능만 담았습니다.</p></div>
+        <div class="ls rv d1"><b>02</b><h4>배달앱 매출을 한눈에</h4><p>플랫폼별 매출 · 정산 · 수수료 · BEP를 매일 확인합니다.</p></div>
+        <div class="ls rv d2"><b>03</b><h4>리뷰 답글 자동화</h4><p>말투 · 별점 규칙에 맞춰 답글을 자동으로 등록합니다.</p></div>
+        <div class="ls rv d3"><b>04</b><h4>노출 순위 추적</h4><p>실시간 노출 랭킹과 시간대별 순위를 추적합니다.</p></div>
+      </div>
     </div>
     <div class="lab-feats rv"><span>통합솔루션</span><span>리뷰 답글</span><span>광고 조정</span><span>손익 관리</span><span>인력 관리</span><span>문의 응대</span><span class="new">상권별 배달 수요 데이터<i>추가 예정</i></span></div>
     <div class="lab-grid">
@@ -828,14 +943,7 @@
       <div><span class="eyebrow rv">OPENING BUDGET</span><h2 class="h2 rv d1">개설비용 안내</h2></div>
       <p class="lead rv d2" style="max-width:440px">신규 개설과 샵인샵(업종변경)의 항목별 참고 예산입니다. (순자국밥 기준 · VAT 별도)</p>
     </div>
-    <div class="fgrid">
-      <div class="fhi rv">
-        <div><small>가맹비</small><b><em>면제</em></b></div>
-        <div><small>해지위약금</small><b><em>없음</em></b></div>
-        <div class="wide"><small>로열티 (정액)</small><b>월 <span class="cnt" data-to="20">20</span>만원 <span class="cond">월 매출 3천만원 이상 시 로열티 지급</span></b></div>
-        <div class="wide"><small>샵인샵 · 업종변경 총액</small><b><em class="cnt" data-to="300">300</em>만원</b></div>
-        <div class="wide"><small>신규 개설 총액</small><b><span class="cnt" data-to="3200" data-comma="1">3,200</span>만원</b></div>
-      </div>
+    <div class="fgrid one">
       <div class="table rv d1">
         <table>
           <thead><tr><th>항목</th><th>신규</th><th>샵인샵 / 업종변경</th></tr></thead>
@@ -853,20 +961,6 @@
         </table>
         <p class="note">* 월 매출 3천만원 이상일 때 로열티 정액 월 20만원을 지급합니다.<br>※ 매장 규모와 입지에 따라 달라질 수 있으며, 정확한 비용은 상담 시 안내해 드립니다.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ NEWS ============ -->
-<section class="news" id="news">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><span class="eyebrow rv">NEWS</span><h2 class="h2 rv d1">보통의가치 소식</h2></div>
-    </div>
-    <div class="ngrid2">
-      <a href="#news" class="ncard2 rv"><div class="ph"><img src="images/menu-34.jpg" alt="" loading="lazy"></div><div class="tx"><span class="lbl hot">OPEN</span><h4>순자국밥 파주 · 중랑 · 천호<br>3개점 동시 오픈</h4><span class="dt">2026.11.27 예정</span></div></a>
-      <a href="#bogalab" class="ncard2 rv d1"><div class="ph"><img src="images/bogalab-analytics.jpg" alt="" loading="lazy"></div><div class="tx"><span class="lbl">SERVICE</span><h4>매출 · 운영 통합관리<br>'보가LAB' 소개</h4><span class="dt">2026.11</span></div></a>
-      <a href="#brands" class="ncard2 rv d2"><div class="ph"><img src="images/team.jpg" alt="" loading="lazy"></div><div class="tx"><span class="lbl">NEWS</span><h4>㈜보통의가치<br>공식 홈페이지 오픈</h4><span class="dt">2026.11</span></div></a>
     </div>
   </div>
 </section>
@@ -923,7 +1017,7 @@
     <div class="row">
       <div>
         <a href="#top" class="flogo"><img src="images/logo.png" alt="보통의가치"></a>
-        <p class="slogan">지극히 평범한 보통의 사람들이 만들어내는 비범한 가치</p>
+        <p class="slogan">지극히 평범한 사람들이 만들어 내는 비범의 가치</p>
         <div class="links"><a href="#about">회사소개</a><a href="#brands">브랜드</a><a href="#bogalab">보가LAB</a><a href="#franchise">창업안내</a><a href="#">개인정보처리방침</a></div>
         <address>
           ㈜보통의가치
@@ -982,7 +1076,7 @@ const BRAND_LINKS = {
   $('#burger').addEventListener('click', () => { drawer.classList.toggle('open'); onScroll(); });
   $$('#drawer a').forEach(a => a.addEventListener('click', () => { drawer.classList.remove('open'); onScroll(); }));
 
-  const mq = $('#marquee'); mq.innerHTML += mq.innerHTML;
+  const mq = $('#marquee'); if (mq) mq.innerHTML += mq.innerHTML;
 
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
   $$('.rv').forEach(el => io.observe(el));
@@ -1243,6 +1337,42 @@ const PROFIT_MODES = {
     build();
   }));
   build();
+})();
+</script>
+<script>
+/* =================== 브랜드 띠: 자동으로 흐르고, 끌거나 밀어서 넘기기 =================== */
+(() => {
+  const strip = document.getElementById('bstrip'), track = document.getElementById('bstrack'); if (!strip) return;
+  track.innerHTML += track.innerHTML;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let x = 0, half = 0, down = false, sx = 0, sx0 = 0, moved = false, last = performance.now(), speed = reduce ? 0 : 0.045;
+  const measure = () => { half = track.scrollWidth / 2; };
+  const wrap = () => { if (!half) return; while (x <= -half) x += half; while (x > 0) x -= half; };
+  const tick = t => { const dt = Math.min(64, t - last); last = t; if (!down) { x -= speed * dt; wrap(); } track.style.transform = 'translate3d(' + x + 'px,0,0)'; requestAnimationFrame(tick); };
+  strip.addEventListener('pointerdown', e => { down = true; moved = false; sx = e.clientX; sx0 = x; strip.classList.add('drag'); strip.setPointerCapture(e.pointerId); });
+  strip.addEventListener('pointermove', e => { if (!down) return; const dx = e.clientX - sx; if (Math.abs(dx) > 3) moved = true; x = sx0 + dx; wrap(); });
+  const up = () => { down = false; strip.classList.remove('drag'); };
+  strip.addEventListener('pointerup', up); strip.addEventListener('pointercancel', up);
+  strip.addEventListener('mouseenter', () => speed = 0.015); strip.addEventListener('mouseleave', () => speed = reduce ? 0 : 0.045);
+  addEventListener('resize', measure); addEventListener('load', measure); measure();
+  requestAnimationFrame(tick);
+})();
+/* =================== 회사소개 사진 슬라이드 =================== */
+(() => {
+  const sl = document.getElementById('bizsl'); if (!sl) return;
+  const track = sl.querySelector('.bz-track'), slides = [...track.children], dots = sl.querySelector('.bz-dots');
+  let i = 0, timer;
+  slides.forEach((_, k) => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', (k + 1) + '번째'); b.onclick = () => go(k, true); dots.appendChild(b); });
+  const go = (k, user) => { i = (k + slides.length) % slides.length; track.style.transform = 'translateX(' + (-100 * i) + '%)'; [...dots.children].forEach((d, n) => d.classList.toggle('on', n === i)); if (user) restart(); };
+  const restart = () => { clearInterval(timer); timer = setInterval(() => go(i + 1), 5000); };
+  sl.querySelector('.prev').onclick = () => go(i - 1, true);
+  sl.querySelector('.next').onclick = () => go(i + 1, true);
+  const view = sl.querySelector('.bz-view'); let sx = null;
+  view.addEventListener('pointerdown', e => { sx = e.clientX; });
+  view.addEventListener('pointerup', e => { if (sx === null) return; const dx = e.clientX - sx; sx = null; if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1), true); });
+  view.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+  view.addEventListener('touchend', e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; sx = null; if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1), true); });
+  go(0); restart();
 })();
 </script>
 </body>
