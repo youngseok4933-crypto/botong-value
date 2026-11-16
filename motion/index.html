@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" /><!-- 시안 단계: 검색 노출 막음. 실제 오픈 시 삭제 -->
+<title>보통의가치 | 지극히 평범한 보통의 사람들이 만들어내는 비범한 가치</title>
+<meta name="description" content="㈜보통의가치는 순자국밥, 고명희냉면, 육연회담을 운영하는 한식 프랜차이즈 기업입니다." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="보통의가치" />
+<meta property="og:title" content="㈜보통의가치 (모션 시안)" />
+<meta property="og:description" content="지극히 평범한 보통의 사람들이 만들어내는 비범한 가치" />
+<meta property="og:image" content="https://youngseok4933-crypto.github.io/botong-value/images/og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://youngseok4933-crypto.github.io/botong-value/motion/" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2356007a'/%3E%3Cg stroke='white' stroke-width='3.2' stroke-linecap='round'%3E%3Cpath d='M16 8v16M9.1 12l13.8 8M9.1 20l13.8-8'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<style>
+  :root{
+    --brand:#56007a; --brand-hover:#6c1294; --brand-soft:#f4ecf8;
+    --bg:#ffffff; --bg2:#f7f6f3; --line:#ebe8e3;
+    --ink:#18161b; --muted:#6f6b75; --muted2:#a39fa8;
+    --radius:24px; --max:1200px; --mx:0; --my:0; --sy:0;
+    --ease:cubic-bezier(.2,.7,.2,1);
+    --ast:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg stroke='black' stroke-width='4' stroke-linecap='round'%3E%3Cpath d='M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;overflow-x:clip}
+  body{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:var(--bg);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+  ::selection{background:var(--brand);color:#fff}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .ast{display:inline-block;width:.5em;height:.5em;background:var(--brand);-webkit-mask:var(--ast) center/contain no-repeat;mask:var(--ast) center/contain no-repeat}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--brand)}
+  .eyebrow::before{content:"";width:11px;height:11px;background:var(--brand);-webkit-mask:var(--ast) center/contain no-repeat;mask:var(--ast) center/contain no-repeat}
+  .h2{font-size:clamp(30px,4.2vw,52px);font-weight:800;line-height:1.24;letter-spacing:-.03em}
+  .h2 em,.hl{font-style:normal;color:var(--brand)}
+  .lead{font-size:clamp(15px,1.4vw,18px);line-height:1.8;color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:15px;transition:.3s var(--ease)}
+  .btn-primary{background:var(--brand);color:#fff}
+  .btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px) scale(1.03)}
+  .btn-line{border:1px solid #d9d6d0;background:#fff}
+  .btn-line:hover{border-color:var(--brand);color:var(--brand)}
+  .sec{padding:150px 0;position:relative}
+  .sec.gray{background:var(--bg2)}
+  .sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:56px;flex-wrap:wrap}
+  .sec-head .eyebrow{margin-bottom:16px}
+  .rv{opacity:0;transform:translateY(46px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  .rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+  /* 스크롤 고정 씬 */
+  .pin{position:relative}
+  .stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+
+  /* loader */
+  .loader{position:fixed;inset:0;z-index:100;background:#fff;display:flex;align-items:center;justify-content:center;transition:transform .9s cubic-bezier(.7,0,.2,1)}
+  .loader.done{transform:translateY(-100%)}
+  .ld-in{display:flex;flex-direction:column;align-items:center;gap:22px}
+  .ld-in img{height:44px;width:auto;animation:ldlogo .9s var(--ease) both}
+  @keyframes ldlogo{from{opacity:0;transform:translateY(16px)}}
+  .ld-line{width:180px;height:2px;background:var(--line);overflow:hidden}
+  .ld-line i{display:block;height:100%;background:var(--brand);transform-origin:left;animation:ldbar 1.2s cubic-bezier(.6,0,.2,1) both}
+  @keyframes ldbar{from{transform:scaleX(0)}}
+  .ld-in span{font-size:11px;letter-spacing:.34em;font-weight:700;color:var(--muted)}
+
+  /* progress + pill nav */
+  .pbar{position:fixed;left:0;top:0;right:0;height:3px;background:var(--brand);transform-origin:left;transform:scaleX(0);z-index:60}
+  .nav{position:fixed;left:50%;top:16px;z-index:50;display:flex;align-items:center;gap:26px;padding:8px 8px 8px 24px;border-radius:999px;background:rgba(255,255,255,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(24,22,27,.07);box-shadow:0 10px 30px rgba(24,22,27,.07);transform:translate(-50%,-140%);transition:transform .9s var(--ease) .5s;white-space:nowrap}
+  .ready .nav{transform:translate(-50%,0)}
+  .nav .logo img{height:22px;width:auto}
+  .nav nav{display:flex;gap:24px;font-size:14px;font-weight:600;color:#3a3640}
+  .nav nav a{transition:.2s}
+  .nav nav a:hover{color:var(--brand)}
+  .nav .btn{height:40px;padding:0 18px;font-size:14px}
+
+  /* ================= HERO ================= */
+  .hero{height:230vh}
+  .hero .stick{background:#fff;--dx:17vw;--dy:0vh;--fade:.94}
+  .blob{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none}
+  .blob.b1{width:46vw;height:46vw;left:-10vw;top:-16vw;background:rgba(255,206,170,.55);animation:drift 14s ease-in-out infinite alternate}
+  .blob.b2{width:42vw;height:42vw;right:-8vw;top:-12vw;background:rgba(206,176,232,.42);animation:drift 17s ease-in-out infinite alternate-reverse}
+  .blob.b3{width:38vw;height:38vw;left:30vw;bottom:-26vw;background:rgba(255,236,208,.7);animation:drift 12s ease-in-out infinite alternate}
+  @keyframes drift{to{transform:translate(6vw,4vw) scale(1.15)}}
+  .hero-tag{position:absolute;left:0;right:0;top:104px;text-align:center;font-size:12px;letter-spacing:.3em;font-weight:700;color:var(--muted);opacity:calc(1 - var(--a,0)*1.6)}
+  .hero-row{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .hero-word{font-size:clamp(70px,14.6vw,260px);font-weight:900;letter-spacing:-.07em;line-height:1;white-space:nowrap;overflow:hidden;padding:.08em .04em;opacity:calc(1 - var(--a,0)*var(--fade));will-change:transform}
+  .hero-word.w1{transform:translate(calc(var(--a,0)*var(--dx)*-1 + var(--mx)*10px),calc(var(--a,0)*var(--dy)*-1))}
+  .hero-word.w2{transform:translate(calc(var(--a,0)*var(--dx) + var(--mx)*10px),calc(var(--a,0)*var(--dy)));display:flex;align-items:flex-end}
+  .hero-word span{display:block;transform:translateY(112%);transition:transform 1.2s var(--ease) .25s}
+  .hero-word.w2 span{transition-delay:.38s}
+  .ready .hero-word span{transform:none}
+  .hero-word .ast{width:.2em;height:.2em;margin:0 0 .16em .04em;flex:none;transform:scale(0) rotate(-180deg);transition:transform 1s var(--ease) 1.1s}
+  .ready .hero-word .ast{transform:scale(1) rotate(calc(var(--p,0)*360deg))}
+  .bowl-wrap{position:relative;z-index:2;flex:none;width:min(31vw,52vh);margin:0 -2.6vw;transform:translate(calc(var(--mx)*-16px),calc(var(--a,0)*-9vh + var(--my)*-12px)) scale(calc(1 - var(--a,0)*.2));will-change:transform}
+  .bowl-in{transform:scale(.5) rotate(-120deg);opacity:0;transition:transform 1.5s var(--ease) .15s,opacity .8s .15s}
+  .ready .bowl-in{transform:none;opacity:1}
+  .bowl{width:100%;border-radius:50%;transform:rotate(calc(var(--p,0)*200deg));filter:drop-shadow(0 34px 40px rgba(60,30,10,.28));will-change:transform}
+  .steam{position:absolute;inset:0;pointer-events:none;opacity:calc(1 - var(--a,0)*1.4)}
+  .steam i{position:absolute;bottom:52%;width:16%;height:46%;border-radius:50%;background:linear-gradient(to top,rgba(255,255,255,.85),rgba(255,255,255,0));filter:blur(13px);opacity:0;animation:steam 4.2s ease-in-out infinite}
+  .steam i:nth-child(1){left:26%}
+  .steam i:nth-child(2){left:44%;animation-delay:1.3s;height:56%}
+  .steam i:nth-child(3){left:60%;animation-delay:2.4s}
+  @keyframes steam{0%{opacity:0;transform:translateY(20%) scaleX(.7)}35%{opacity:.85}100%{opacity:0;transform:translateY(-70%) scaleX(1.5) rotate(8deg)}}
+  .hero-copy{position:absolute;left:0;right:0;bottom:9vh;text-align:center;padding:0 24px;opacity:var(--b,0);transform:translateY(calc((1 - var(--b,0))*46px));z-index:3}
+  .hero-copy .quote{font-size:15px;font-weight:700;color:var(--brand);margin-bottom:12px}
+  .hero-copy h1{font-size:clamp(26px,3.7vw,56px);font-weight:800;line-height:1.24;letter-spacing:-.035em}
+  .hero-copy h1 em{font-style:normal;color:var(--brand)}
+  .hero-copy p.sub{color:var(--muted);margin-top:14px;font-size:clamp(14px,1.2vw,17px)}
+  .hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:11px;letter-spacing:.3em;font-weight:700;color:var(--muted);opacity:calc(1 - var(--a,0)*3)}
+  .hint::after{content:"";width:1px;height:34px;background:var(--ink);transform-origin:top;animation:hint 1.8s ease-in-out infinite}
+  @keyframes hint{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1) translateY(34px);opacity:0}}
+
+  /* ================= SLOGAN FILL ================= */
+  .say{height:240vh}
+  .say .stick{display:flex;align-items:center;justify-content:center;background:var(--bg2)}
+  .say-in{max-width:1180px;padding:0 24px;text-align:center}
+  .say-text{font-size:clamp(32px,6vw,92px);font-weight:800;line-height:1.26;letter-spacing:-.04em}
+  .say-text .w{display:inline-block;color:#dcd8e0;transition:color .5s,transform .6s var(--ease);margin:0 .13em}
+  .say-text .w.on{color:var(--ink)}
+  .say-text .w.hi.on{color:var(--brand);transform:translateY(-.04em)}
+  .say-ast{display:inline-block;width:.42em;height:.42em;background:var(--brand);-webkit-mask:var(--ast) center/contain no-repeat;mask:var(--ast) center/contain no-repeat;vertical-align:.5em;transform:scale(0) rotate(-200deg);transition:transform .9s var(--ease)}
+  .say.end .say-ast{transform:scale(1) rotate(0)}
+  .say-sub{margin:38px auto 0;max-width:640px;opacity:0;transform:translateY(24px);transition:.9s var(--ease)}
+  .say.end .say-sub{opacity:1;transform:none}
+  .say-label{position:absolute;left:0;right:0;top:110px;text-align:center}
+
+  /* ================= ABOUT ================= */
+  .biz{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .bizcard{background:var(--bg2);border-radius:var(--radius);padding:38px 34px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid transparent;transition:background .4s,border-color .4s,box-shadow .4s,opacity 1s var(--ease),transform 1s var(--ease);position:relative;overflow:hidden}
+  .bizcard::after{content:"";position:absolute;right:-40px;top:-40px;width:150px;height:150px;background:var(--brand);opacity:.05;-webkit-mask:var(--ast) center/contain no-repeat;mask:var(--ast) center/contain no-repeat;transition:transform 1.2s var(--ease),opacity .4s}
+  .bizcard:hover{background:#fff;border-color:var(--brand);box-shadow:0 18px 40px rgba(86,0,122,.08)}
+  .bizcard:hover::after{transform:rotate(120deg) scale(1.25);opacity:.1}
+  .bizcard .num{font-size:14px;color:var(--brand);font-weight:800;letter-spacing:.08em}
+  .bizcard h3{font-size:30px;font-weight:800;letter-spacing:-.03em;margin:48px 0 14px}
+  .bizcard p{color:var(--muted);line-height:1.75;font-size:15px}
+
+  /* ================= BRANDS SCENE ================= */
+  .brands{height:440vh}
+  .brands .stick{background:#fff2d8}
+  .brands-head{position:absolute;left:max(6vw,calc(50% - 600px));top:104px;z-index:4}
+  .brands-head b{display:block;font-size:clamp(20px,2vw,28px);font-weight:800;letter-spacing:-.02em;margin-top:10px}
+  .bg-word{position:absolute;left:62%;top:52%;font-size:23vw;font-weight:900;letter-spacing:-.07em;white-space:nowrap;line-height:1;pointer-events:none;will-change:transform,opacity}
+  .plates{position:absolute;left:68%;top:52%;z-index:2}
+  .plate{position:absolute;left:0;top:0;width:min(39vw,64vh);max-width:none;border-radius:50%;filter:drop-shadow(0 40px 46px rgba(40,20,10,.3));will-change:transform}
+  .panels{position:absolute;left:max(6vw,calc(50% - 600px));top:0;bottom:0;width:min(430px,38vw);display:grid;align-items:center;z-index:3}
+  .panel{grid-area:1/1;will-change:transform,opacity}
+  .panel .idx{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:800;letter-spacing:.12em;color:var(--bc)}
+  .panel .idx::after{content:"";width:46px;height:2px;background:var(--bc)}
+  .panel .blogo{height:76px;display:flex;align-items:center;margin:22px 0 16px}
+  .panel .blogo img{max-height:54px;max-width:240px;width:auto}
+  .panel .blogo.tall img{max-height:84px}
+  .panel .copy{font-size:clamp(22px,2.3vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.35}
+  .panel .desc{color:#55505c;line-height:1.75;margin-top:14px;font-size:15px}
+  .panel .menus{display:flex;flex-wrap:wrap;gap:6px;margin:20px 0 26px}
+  .panel .menus span{font-size:13px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.7);font-weight:600;color:#3a3640}
+  .panel .act{display:flex;gap:8px;flex-wrap:wrap}
+  .panel .act a{height:46px;padding:0 20px;border-radius:999px;display:inline-flex;align-items:center;font-size:14px;font-weight:700;background:var(--ink);color:#fff;transition:.3s var(--ease)}
+  .panel .act a:hover{background:var(--brand);transform:translateY(-2px)}
+  .panel .act a.ghost{background:rgba(255,255,255,.75);color:var(--ink)}
+  .bdots{position:absolute;right:3vw;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:18px;z-index:4}
+  .bdots button{display:flex;align-items:center;justify-content:flex-end;gap:10px;font-size:12px;font-weight:700;color:rgba(24,22,27,.4);transition:.3s}
+  .bdots button::after{content:"";width:8px;height:8px;border-radius:50%;background:rgba(24,22,27,.25);transition:.3s}
+  .bdots button.on{color:var(--ink)}
+  .bdots button.on::after{background:var(--brand);transform:scale(1.6)}
+  .soonline{position:absolute;left:0;right:0;bottom:26px;text-align:center;font-size:13px;color:#55505c;z-index:4;padding:0 20px}
+  .soonline b{font-weight:700;color:var(--ink)}
+
+  /* ================= MENU HORIZONTAL ================= */
+  .hmenu .stick{display:flex;flex-direction:column;justify-content:center;background:#fff}
+  .hm-head{padding:0 max(24px,calc(50vw - 576px));margin-bottom:40px;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+  .hm-head img{height:40px;width:auto;margin:14px 0 12px}
+  .hm-head h2{font-size:clamp(26px,3vw,40px);font-weight:800;letter-spacing:-.03em}
+  .hm-head small{color:var(--muted);font-size:13px}
+  .hm-track{display:flex;gap:22px;padding:30px max(24px,calc(50vw - 576px));width:max-content;will-change:transform}
+  .hcard{width:clamp(210px,21vw,300px);flex:none;transform:translateY(calc(var(--k,0)*var(--k,0)*46px)) rotate(calc(var(--k,0)*5deg));will-change:transform}
+  .hcard .ph{aspect-ratio:1;border-radius:26px;overflow:hidden;background:#fff2d8;position:relative}
+  .hcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+  .hcard:hover .ph img{transform:scale(1.08) rotate(-2deg)}
+  .hcard .pick{position:absolute;top:14px;left:14px;background:#de7736;color:#fff;font-size:12px;font-weight:800;padding:5px 10px;border-radius:8px;z-index:1}
+  .hcard h4{font-size:18px;font-weight:700;margin-top:16px}
+  .hcard p{font-size:14px;color:var(--muted);margin-top:4px}
+  .hm-bar{margin:26px max(24px,calc(50vw - 576px)) 0;height:2px;background:var(--line)}
+  .hm-bar i{display:block;height:100%;background:var(--brand);transform-origin:left;transform:scaleX(var(--p,0))}
+
+  /* ================= STRENGTH ================= */
+  .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .scard{background:#fff;border-radius:var(--radius);padding:36px 34px 38px}
+  .scard .viz{height:150px;display:flex;align-items:center;margin-bottom:22px}
+  .scard h3{font-size:22px;font-weight:800;letter-spacing:-.02em;margin-bottom:10px;line-height:1.4}
+  .scard p{color:var(--muted);font-size:15px;line-height:1.75}
+  .ring{position:relative;width:140px;height:140px}
+  .ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+  .ring circle{fill:none;stroke-width:10}
+  .ring .t{stroke:var(--bg2)}
+  .ring .v{stroke:var(--brand);stroke-linecap:round;stroke-dasharray:339.3;stroke-dashoffset:339.3;transition:stroke-dashoffset 1.8s var(--ease) .3s}
+  .in .ring .v{stroke-dashoffset:237.5}
+  .ring b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:800;letter-spacing:-.04em;color:var(--brand)}
+  .ring b small{font-size:14px;margin:8px 0 0 2px}
+  .merge{display:flex;align-items:center;gap:0;width:100%}
+  .merge span{height:52px;padding:0 16px;border-radius:999px;display:flex;align-items:center;font-size:14px;font-weight:700;color:#fff;white-space:nowrap;transition:transform 1.3s var(--ease) .3s,opacity .8s .3s;opacity:0}
+  .merge span:nth-child(1){background:#de7736;transform:translateX(-40px)}
+  .merge span:nth-child(2){background:#2f6fb5;transform:translateY(40px);margin-left:-10px}
+  .merge span:nth-child(3){background:#c8323a;transform:translateX(40px);margin-left:-10px}
+  .in .merge span{transform:none;opacity:1}
+  .pulse{position:relative;width:76px;height:76px;margin-left:30px}
+  .pulse img{width:100%;height:100%;border-radius:20px;position:relative;z-index:1}
+  .pulse::before,.pulse::after{content:"";position:absolute;inset:0;border-radius:20px;border:2px solid var(--brand);animation:pulse 2.6s ease-out infinite}
+  .pulse::after{animation-delay:1.3s}
+  @keyframes pulse{from{transform:scale(1);opacity:.5}to{transform:scale(2.1);opacity:0}}
+
+  /* ================= BOGA LAB ================= */
+  .lab-head{display:flex;gap:28px;align-items:center;margin-bottom:60px;flex-wrap:wrap}
+  .lab-head img{width:96px;height:96px;border-radius:24px;box-shadow:0 14px 30px rgba(86,0,122,.2)}
+  .lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;perspective:1600px}
+  .tilt-wrap{--v:0}
+  .lab-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;transform-origin:50% 100%;transform:rotateX(calc((1 - var(--v))*34deg)) translateY(calc((1 - var(--v))*70px)) scale(calc(.86 + var(--v)*.14));opacity:calc(.25 + var(--v)*.75);box-shadow:0 calc(var(--v)*30px) calc(var(--v)*60px) rgba(24,22,27,.08);will-change:transform}
+  .lab-card .shot{background:var(--bg2);padding:24px 24px 0}
+  .lab-card .shot img{border-radius:14px 14px 0 0;box-shadow:0 10px 30px rgba(24,22,27,.08);width:100%;aspect-ratio:2.05/1;object-fit:cover;object-position:top}
+  .lab-card .tx{padding:30px 32px 34px}
+  .lab-card h3{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+  .lab-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .lab-card li{display:flex;gap:10px;color:#4a4650;font-size:15px;line-height:1.6}
+  .lab-card li::before{content:"";flex:none;width:10px;height:10px;margin-top:.45em;background:var(--brand);-webkit-mask:var(--ast) center/contain no-repeat;mask:var(--ast) center/contain no-repeat}
+
+  /* ================= ROADMAP 100 ================= */
+  .road{height:230vh}
+  .road .stick{display:flex;align-items:center;background:#f3f2ef url(../images/map.jpg) center/cover no-repeat}
+  .road .stick::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.8)}
+  .road-in{position:relative;display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;width:100%}
+  .road-num{font-size:clamp(90px,17vw,260px);font-weight:900;letter-spacing:-.07em;line-height:.9;color:var(--brand);font-variant-numeric:tabular-nums}
+  .road-num small{font-size:.22em;letter-spacing:-.03em;color:var(--ink);margin-left:.1em}
+  .road h2{font-size:clamp(22px,2.6vw,38px);font-weight:800;letter-spacing:-.03em;margin:22px 0 10px}
+  .dotgrid{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(6px,.9vw,12px);width:min(40vw,52vh)}
+  .dotgrid i{aspect-ratio:1;border-radius:50%;background:rgba(24,22,27,.09);transform:scale(.55);transition:transform .5s var(--ease),background .4s}
+  .dotgrid i.on{background:rgba(86,0,122,.26);transform:scale(1)}
+  .dotgrid i.open.on{background:var(--brand);box-shadow:0 0 0 4px rgba(86,0,122,.16)}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:14px;color:#3a3640;font-weight:600}
+  .legend span{display:flex;align-items:center;gap:8px}
+  .legend span::before{content:"";width:12px;height:12px;border-radius:50%;background:rgba(86,0,122,.26)}
+  .legend span.o::before{background:var(--brand)}
+  .opens{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap;opacity:0;transform:translateY(20px);transition:.8s var(--ease)}
+  .road.end .opens{opacity:1;transform:none}
+  .opens b{font-size:14px;color:var(--brand);width:100%}
+  .opens span{background:#fff;border-radius:999px;padding:12px 18px;font-weight:700;box-shadow:0 8px 24px rgba(24,22,27,.08)}
+  .opens span small{color:var(--brand);font-weight:700;margin-left:6px;font-size:12px}
+
+  /* ================= COST ================= */
+  .fgrid{display:grid;grid-template-columns:1fr 1.4fr;gap:20px;align-items:start}
+  .fhi{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .fhi div{background:#fff;border-radius:20px;padding:26px 24px}
+  .fhi div.wide{grid-column:1/-1}
+  .fhi small{display:block;font-size:13px;color:var(--muted);font-weight:600}
+  .fhi b{display:block;font-size:32px;font-weight:800;letter-spacing:-.03em;margin-top:8px;font-variant-numeric:tabular-nums}
+  .fhi b em{font-style:normal;color:var(--brand)}
+  .table{background:#fff;border-radius:var(--radius);padding:12px 28px 24px}
+  .table table{width:100%;border-collapse:collapse;font-size:15px}
+  .table th,.table td{padding:16px 10px;text-align:left;border-bottom:1px solid var(--line)}
+  .table th{font-size:13px;color:var(--muted);font-weight:700}
+  .table td:not(:first-child),.table th:not(:first-child){text-align:right}
+  .table tbody tr{opacity:0;transform:translateX(-18px);transition:.7s var(--ease)}
+  .table.in tbody tr{opacity:1;transform:none}
+  .table tr.total td{border-bottom:0;font-weight:800;font-size:17px}
+  .table tr.total td:not(:first-child){color:var(--brand)}
+  .table .note{font-size:13px;color:var(--muted);margin-top:14px}
+
+  /* ================= MARQUEE ================= */
+  .mq{overflow:hidden;padding:70px 0;background:#fff}
+  .mq-in{display:flex;width:max-content;animation:mq 34s linear infinite}
+  .mq-in span{font-size:clamp(44px,7.5vw,120px);font-weight:900;letter-spacing:-.05em;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px #cfc8d6;display:flex;align-items:center}
+  .mq-in span b{color:var(--ink);-webkit-text-stroke:0;font-weight:900}
+  .mq-in span .ast{width:.45em;height:.45em;margin:0 .4em;animation:spin 8s linear infinite}
+  @keyframes mq{to{transform:translateX(-50%)}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* ================= CONTACT ================= */
+  .fform{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;background:#fff;border-radius:28px;padding:48px}
+  .fform h3{font-size:32px;font-weight:800;letter-spacing:-.03em;line-height:1.3}
+  .fform .lead{margin-top:14px}
+  .quick{margin-top:30px;display:flex;flex-direction:column;gap:10px}
+  .quick a{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-radius:16px;background:var(--bg2);border:1px solid transparent;font-weight:700;transition:.3s var(--ease)}
+  .quick a:hover{border-color:var(--brand);background:#fff;transform:translateX(6px)}
+  .quick a i{font-style:normal;font-size:13px;color:var(--muted);font-weight:600}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
+  .fields .full{grid-column:1/-1}
+  .fields label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px;font-weight:600}
+  .fields input,.fields select,.fields textarea{width:100%;height:52px;border-radius:12px;border:1px solid #e2ded7;background:#fff;color:var(--ink);padding:0 14px;font:inherit;font-size:15px;transition:.2s}
+  .fields textarea{height:140px;padding:14px;resize:vertical}
+  .fields input:focus,.fields select:focus,.fields textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 4px rgba(86,0,122,.08)}
+  .agree{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+  .agree input{width:18px;height:18px;accent-color:var(--brand)}
+  .fields .btn{border-radius:14px}
+
+  /* closing */
+  .closing{padding:0 0 150px;background:var(--bg2)}
+  .band{border-radius:32px;background:var(--brand);color:#fff;padding:80px 56px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;position:relative;overflow:hidden}
+  .band::after{content:"";position:absolute;right:-50px;top:50%;width:380px;height:380px;margin-top:-190px;background:rgba(255,255,255,.1);-webkit-mask:var(--ast) center/contain no-repeat;mask:var(--ast) center/contain no-repeat;pointer-events:none;transform:rotate(calc(var(--sy)*.12deg))}
+  .band img{height:34px;width:auto;margin-bottom:22px}
+  .band h2{font-size:clamp(26px,3.4vw,42px);font-weight:800;line-height:1.35;letter-spacing:-.03em}
+  .band .btn{background:#fff;color:var(--brand);position:relative;z-index:1}
+  .band .btn:hover{transform:translateY(-2px) scale(1.04)}
+
+  .ft{background:#fff;padding:60px 0 70px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  .ft .row{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-end}
+  .ft img{height:26px;width:auto;margin-bottom:16px}
+  .ft .slogan{font-size:15px;color:var(--ink);font-weight:600;margin-bottom:14px}
+  .ft a.alt{font-weight:700;color:var(--brand)}
+  .toast{position:fixed;left:50%;top:90px;transform:translate(-50%,-20px);background:var(--ink);color:#fff;padding:16px 22px;border-radius:14px;font-weight:700;box-shadow:0 10px 40px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:.35s;z-index:70}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  @media (max-width:1024px){
+    .nav nav{display:none}
+    .nav{gap:16px;padding-left:20px}
+    .biz,.sgrid,.fgrid,.lab-grid,.fform{grid-template-columns:1fr}
+    .bizcard{min-height:auto}.bizcard h3{margin-top:26px}
+    .scard .viz{height:auto;min-height:110px}
+  }
+  @media (max-width:820px){
+    .sec{padding:96px 0}
+    .closing{padding-bottom:96px}
+    /* hero: 세로 배치 */
+    .hero .stick{--dx:0vw;--dy:9vh;--fade:1}
+    .hero-row{flex-direction:column;padding-bottom:6vh}
+    .hero-word{font-size:25vw}
+    .bowl-wrap{width:min(62vw,34vh);margin:-4vw 0}
+    .hero-tag{top:92px;font-size:10px}
+    .hero-copy{bottom:10vh}
+    /* brands */
+    .brands-head{left:24px;top:88px}
+    .plates{left:50%;top:33%}
+    .plate{width:min(58vw,29vh)}
+    .bg-word{left:50%;top:33%;font-size:34vw}
+    .brands-head b{font-size:18px;margin-top:6px}
+    .panels{left:24px;right:24px;width:auto;top:50%;bottom:0;align-items:start}
+    .panel .blogo{height:50px;margin:12px 0 8px}
+    .panel .blogo img{max-height:36px;max-width:170px}
+    .panel .blogo.tall img{max-height:50px}
+    .panel .desc{font-size:14px;margin-top:8px;line-height:1.65}
+    .panel .menus{margin:12px 0 16px}
+    .panel .menus span{font-size:12px;padding:6px 10px}
+    .panel .act a{height:42px;padding:0 16px}
+    .bdots{right:14px;top:33%}
+    .bdots button{font-size:0;gap:0}
+    .soonline{display:none}
+    /* menu */
+    .hcard{width:62vw}
+    .hm-head{margin-bottom:10px}
+    /* road */
+    .road-in{grid-template-columns:1fr;gap:26px}
+    .dotgrid{width:min(78vw,34vh)}
+    .road-num{font-size:30vw}
+    .opens span{padding:10px 14px;font-size:14px}
+    .fform{padding:28px 22px}
+    .fields{grid-template-columns:1fr}
+    .table{padding:8px 14px 18px}
+    .table table{font-size:13px}
+    .table th,.table td{padding:12px 4px}
+    .band{padding:48px 28px}
+    .merge span{padding:0 12px;font-size:13px;height:46px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .blob,.steam i,.mq-in,.mq-in span .ast,.pulse::before,.pulse::after,.hint::after{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<div class="loader" id="loader"><div class="ld-in"><img src="../images/logo.png" alt="보통의가치"><div class="ld-line"><i></i></div><span>ORDINARY VALUE</span></div></div>
+<div class="pbar" id="pbar"></div>
+
+<header class="nav">
+  <a href="#top" class="logo" aria-label="보통의가치 홈"><img src="../images/logo.png" alt="보통의가치"></a>
+  <nav><a href="#about">회사소개</a><a href="#brands">브랜드</a><a href="#menu">메뉴</a><a href="#strength">경쟁력</a><a href="#bogalab">보가LAB</a><a href="#franchise">창업안내</a></nav>
+  <a href="#contact" class="btn btn-primary">문의하기</a>
+</header>
+
+<main>
+<!-- ============ HERO : 그릇이 돌고, 글자가 갈라집니다 ============ -->
+<section class="pin hero" id="top">
+  <div class="stick">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+    <p class="hero-tag">ORDINARY VALUE · KOREAN FOOD FRANCHISE</p>
+    <div class="hero-row">
+      <div class="hero-word w1"><span>보통의</span></div>
+      <div class="bowl-wrap"><div class="bowl-in"><img class="bowl" src="images/plate-sunja.webp" alt="순자국밥 한 그릇"><div class="steam"><i></i><i></i><i></i></div></div></div>
+      <div class="hero-word w2"><span>가치</span><i class="ast"></i></div>
+    </div>
+    <div class="hero-copy">
+      <p class="quote">'보통의가치'</p>
+      <h1>지극히 평범한 보통의 사람들이<br>만들어내는 <em>비범한 가치</em></h1>
+      <p class="sub">브랜드의 시작부터 운영의 완성까지, 보통의가치가 설계합니다.</p>
+    </div>
+    <div class="hint">SCROLL</div>
+  </div>
+</section>
+
+<!-- ============ SLOGAN : 스크롤하면 문장이 채워집니다 ============ -->
+<section class="pin say" id="story">
+  <div class="stick">
+    <div class="say-label"><span class="eyebrow">ORDINARY → EXTRAORDINARY</span></div>
+    <div class="say-in">
+      <p class="say-text"><span class="w">지극히</span><span class="w">평범한</span><span class="w">보통의</span><span class="w">사람들이</span><br><span class="w">만들어내는</span><span class="w hi">비범한</span><span class="w hi">가치</span><i class="say-ast"></i></p>
+      <p class="lead say-sub">한 그릇의 국밥, 한 그릇의 냉면, 한 접시의 육회. 그 평범한 한 끼 뒤에서 매일 묵묵히 제 몫을 해내는 사람들의 성실함이 가장 비범한 가치라고 믿습니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow rv">COMPANY OVERVIEW</span><h2 class="h2 rv d1">'보통의가치'는<br><em>이런 곳</em>입니다</h2></div>
+      <p class="lead rv d2" style="max-width:460px">브랜드의 시작부터 운영의 완성까지, 보통의가치가 설계합니다. 브랜드를 만들고, 매장 운영을 돕고, 식자재를 공급하는 일까지 본사가 직접 맡습니다.</p>
+    </div>
+    <div class="biz">
+      <div class="bizcard rv"><span class="num">01</span><div><h3>브랜드 개발</h3><p>다양한 한식 프랜차이즈 브랜드를<br>기획 · 개발 · 오픈 · 관리합니다.</p></div></div>
+      <div class="bizcard rv d1"><span class="num">02</span><div><h3>운영 관리</h3><p>통합운영 프로그램 '보가LAB'으로<br>매장 운영과 데이터를 한 곳에서 관리합니다.</p></div></div>
+      <div class="bizcard rv d2"><span class="num">03</span><div><h3>유통</h3><p>식자재와 물류를 직접 관리하고,<br>낮은 물류마진으로 공급합니다.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRANDS : 그릇이 굴러가며 브랜드가 바뀝니다 ============ -->
+<section class="pin brands" id="brands">
+  <div class="stick" id="bstick">
+    <div class="brands-head"><span class="eyebrow">OUR BRANDS</span><b>한 식구, 다양한 맛</b></div>
+    <div class="bg-word" style="color:rgba(222,119,54,.12)">순자국밥</div>
+    <div class="bg-word" style="color:rgba(47,111,181,.1)">고명희냉면</div>
+    <div class="bg-word" style="color:rgba(200,50,58,.09)">육연회담</div>
+    <div class="plates">
+      <img class="plate" src="images/plate-sunja.webp" alt="순자국밥">
+      <img class="plate" src="images/plate-go.webp" alt="고명희냉면" loading="lazy">
+      <img class="plate" src="images/plate-yuk.webp" alt="육연회담" loading="lazy">
+    </div>
+    <div class="panels">
+      <article class="panel" style="--bc:#c9621f">
+        <span class="idx">01 · MAIN BRAND</span>
+        <div class="blogo"><img src="../images/brand-sunja.png" alt="순자국밥"></div>
+        <p class="copy">한 그릇에 담긴<br>순자엄마의 마음</p>
+        <p class="desc">넉넉히 담아주는 엄마의 포근함처럼, 든든하고 따뜻한 국밥 한 그릇을 만듭니다.</p>
+        <div class="menus"><span>얼큰순자국밥</span><span>돼지국밥</span><span>순대국밥</span><span>갈비탕</span><span>보쌈수육</span></div>
+        <div class="act"><a href="#" data-brand-fran="sunja">가맹 문의</a><a href="#menu" class="ghost">메뉴 보기</a></div>
+      </article>
+      <article class="panel" style="--bc:#2f6fb5">
+        <span class="idx">02 · BRAND</span>
+        <div class="blogo"><img src="../images/brand-gomyung.png" alt="고명희냉면"></div>
+        <p class="copy">30년의 노하우,<br>한 그릇의 냉면</p>
+        <p class="desc">30년 전통 수제 레시피 그대로, 싱싱한 과일을 직접 우려낸 육수로 만듭니다.</p>
+        <div class="menus"><span>물냉면</span><span>비빔냉면</span><span>불냉면</span><span>만두</span></div>
+        <div class="act"><a href="#" data-brand-fran="go">가맹 문의</a></div>
+      </article>
+      <article class="panel" style="--bc:#c8323a">
+        <span class="idx">03 · BRAND</span>
+        <div class="blogo tall"><img src="../images/brand-yukyeon.png" alt="육연회담"></div>
+        <p class="copy">육회 · 연어 · 초밥</p>
+        <p class="desc">매일 가락시장에서 직접 공수해, 그날 들어온 재료는 그날 조리하는 것을 원칙으로 합니다.</p>
+        <div class="menus"><span>최상급 육회</span><span>생연어 사시미</span><span>모듬초밥</span><span>육회비빔밥</span></div>
+        <div class="act"><a href="#" data-brand-fran="yuk">가맹 문의</a></div>
+      </article>
+    </div>
+    <div class="bdots" id="bdots"><button>순자국밥</button><button>고명희냉면</button><button>육연회담</button></div>
+    <p class="soonline"><b>COMING SOON</b> &nbsp; 막내해장국 · 큰이모김치찜 · 주먹아구찜</p>
+  </div>
+</section>
+
+<!-- ============ MENU : 가로로 흐르는 메뉴 ============ -->
+<section class="pin hmenu" id="menu">
+  <div class="stick">
+    <div class="hm-head">
+      <div><span class="eyebrow">MENU PORTFOLIO</span><img src="../images/brand-sunja.png" alt="순자국밥"><h2>대표 메뉴</h2></div>
+      <small>※ 메뉴 구성과 가격은 매장에 따라 다를 수 있습니다.</small>
+    </div>
+    <div class="hm-track" id="hmtrack">
+      <div class="hcard"><div class="ph"><img src="../images/menu-19.jpg" alt="얼큰순자국밥"></div><h4>얼큰순자국밥</h4><p>13,000원</p></div>
+      <div class="hcard"><div class="ph"><img src="../images/menu-22.jpg" alt="돼지국밥"></div><h4>돼지국밥</h4><p>12,000원</p></div>
+      <div class="hcard"><div class="ph"><img src="../images/menu-25.jpg" alt="얼큰돼지국밥"></div><h4>얼큰돼지국밥</h4><p>13,000원</p></div>
+      <div class="hcard"><div class="ph"><img src="../images/menu-28.jpg" alt="살코기국밥"></div><h4>살코기국밥</h4><p>12,000원</p></div>
+      <div class="hcard"><div class="ph"><img src="../images/menu-34.jpg" alt="순대국밥"></div><h4>순대국밥</h4><p>12,000원</p></div>
+      <div class="hcard"><div class="ph"><span class="pick">PICK!</span><img src="../images/menu-39.jpg" alt="갈비탕"></div><h4>갈비탕</h4><p>14,000원</p></div>
+      <div class="hcard"><div class="ph"><img src="../images/menu-42.jpg" alt="장터소국밥"></div><h4>장터소국밥</h4><p>14,000원</p></div>
+      <div class="hcard"><div class="ph"><img src="../images/menu-45.jpg" alt="김치찌개"></div><h4>김치찌개</h4><p>14,000원</p></div>
+      <div class="hcard"><div class="ph"><img src="../images/menu-49.jpg" alt="보쌈수육"></div><h4>보쌈수육</h4><p>12,000원</p></div>
+      <div class="hcard"><div class="ph"><img src="../images/menu-52.jpg" alt="순대한상"></div><h4>순대한상</h4><p>9,000원</p></div>
+      <div class="hcard"><div class="ph"><img src="../images/menu-58.jpg" alt="고기왕만두"></div><h4>고기왕만두</h4><p>6,000원</p></div>
+    </div>
+    <div class="hm-bar"><i></i></div>
+  </div>
+</section>
+
+<!-- ============ STRENGTH ============ -->
+<section class="sec gray" id="strength">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow rv">OPERATING MODEL</span><h2 class="h2 rv d1">보통의가치만의<br><em>브랜드 경쟁력</em></h2></div>
+      <p class="lead rv d2" style="max-width:420px">원가 경쟁력 · 샵인샵 확장 · 보가LAB 운영 지원. 가맹점이 남는 구조를 먼저 설계합니다.</p>
+    </div>
+    <div class="sgrid">
+      <div class="scard rv"><div class="viz"><div class="ring"><svg viewBox="0 0 120 120"><circle class="t" cx="60" cy="60" r="54"/><circle class="v" cx="60" cy="60" r="54"/></svg><b><span class="cnt" data-to="30">0</span><small>%</small></b></div></div><h3>낮은 본사 물류마진</h3><p>물류마진 최소화를 목표로 원가율 30% 이하를 기획하고, 가맹점의 수익성을 높입니다.</p></div>
+      <div class="scard rv d1"><div class="viz"><div class="merge"><span>순자국밥</span><span>고명희냉면</span><span>육연회담</span></div></div><h3>다양한 브랜드로 매출을 더하다</h3><p>한 주방의 샵인샵 운영으로 고객층과 주문 유입을 넓히고 추가 매출을 만듭니다.</p></div>
+      <div class="scard rv d2"><div class="viz"><div class="pulse"><img src="../images/bogalab-logo.png" alt="보가LAB"></div></div><h3>통합운영프로그램 '보가LAB'</h3><p>매장 운영의 모든 것을 한 곳에서. 매출 · 운영 · 리뷰를 통합 관리하는 프로그램을 개발해 제공합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOGA LAB : 화면이 일어섭니다 ============ -->
+<section class="sec" id="bogalab">
+  <div class="wrap">
+    <div class="lab-head">
+      <img src="../images/bogalab-logo.png" alt="보가LAB 로고" class="rv">
+      <div><span class="eyebrow rv">BOGA LAB</span><h2 class="h2 rv d1" style="margin-top:12px">보가LAB : 매출 · 운영 <em>통합관리시스템</em></h2></div>
+    </div>
+    <div class="lab-grid">
+      <div class="tilt-wrap"><div class="lab-card">
+        <div class="shot"><img src="../images/bogalab-review.jpg" alt="보가LAB 리뷰관리 화면" loading="lazy"></div>
+        <div class="tx"><h3>리뷰관리 자동화</h3><ul><li>말투 · 별점 규칙 · 시간대 예약 커스텀</li><li>AI 답글 자동 등록 · 고정 홍보 문구 · 2차 답글</li><li>부정리뷰 알림 · 자동삭제 지원</li></ul></div>
+      </div></div>
+      <div class="tilt-wrap"><div class="lab-card">
+        <div class="shot"><img src="../images/bogalab-analytics.jpg" alt="보가LAB 운영분석 화면" loading="lazy"></div>
+        <div class="tx"><h3>총괄운영분석</h3><ul><li>플랫폼별 매출 · 정산 · 수수료 · BEP 일별 확인</li><li>주문내역 통합 · 노출 · 클릭 · 주문 분석</li><li>실시간 노출 랭킹 · 시간대별 순위 추적</li></ul></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROADMAP : 점이 100개까지 채워집니다 ============ -->
+<section class="pin road" id="roadmap">
+  <div class="stick">
+    <div class="wrap road-in">
+      <div>
+        <span class="eyebrow">GROWTH ROADMAP</span>
+        <div class="road-num"><span id="roadnum">0</span><small>개점</small></div>
+        <h2>1년 동안 100개 점포 오픈 목표</h2>
+        <p class="lead">순자국밥 기준 매장 확대 목표입니다.</p>
+        <div class="opens"><b>2026.11.27 · 3개점 동시 오픈 예정</b><span>파주<small>직영</small></span><span>중랑</span><span>천호</span></div>
+      </div>
+      <div>
+        <div class="dotgrid" id="dotgrid"></div>
+        <div class="legend"><span class="o">오픈 예정 3</span><span>1년 목표 100</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COST ============ -->
+<section class="sec gray" id="franchise">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow rv">OPENING BUDGET</span><h2 class="h2 rv d1">개설비용 안내</h2></div>
+      <p class="lead rv d2" style="max-width:420px">신규 개설과 샵인샵(업종변경)의 항목별 참고 예산입니다. (순자국밥 기준 · VAT 별도)</p>
+    </div>
+    <div class="fgrid">
+      <div class="fhi rv">
+        <div><small>가맹비</small><b><em>면제</em></b></div>
+        <div><small>로열티</small><b><span class="cnt" data-to="2">0</span>%</b></div>
+        <div class="wide"><small>샵인샵 · 업종변경 총액</small><b><em><span class="cnt" data-to="300">0</span></em>만원</b></div>
+        <div class="wide"><small>신규 개설 총액</small><b><span class="cnt" data-to="3200" data-comma="1">0</span>만원</b></div>
+      </div>
+      <div class="table rv d1" id="ctable">
+        <table>
+          <thead><tr><th>항목</th><th>신규</th><th>샵인샵 / 업종변경</th></tr></thead>
+          <tbody>
+            <tr><td>주방 기물</td><td>600만원</td><td>기존 기물 활용</td></tr>
+            <tr><td>냉동설비</td><td>500만원</td><td>100만원</td></tr>
+            <tr><td>인테리어</td><td>2,000만원</td><td>추가 공사비 별도</td></tr>
+            <tr><td>시트지 · 간판</td><td>인테리어에 포함</td><td>100만원</td></tr>
+            <tr><td>교육비</td><td>100만원</td><td>100만원</td></tr>
+            <tr><td>가맹비</td><td>면제</td><td>면제</td></tr>
+            <tr><td>로열티</td><td>2%</td><td>2%</td></tr>
+            <tr class="total"><td>총액</td><td>3,200만원</td><td>300만원</td></tr>
+          </tbody>
+        </table>
+        <p class="note">※ 매장 규모와 입지에 따라 달라질 수 있으며, 정확한 비용은 상담 시 안내해 드립니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="mq" aria-hidden="true"><div class="mq-in" id="mqin"><span>지극히 평범한 보통의 사람들이 만들어내는 <b>&nbsp;비범한 가치</b><i class="ast"></i>ORDINARY VALUE<i class="ast"></i></span></div></div>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec gray" id="contact">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow rv">CONTACT</span><h2 class="h2 rv d1">협력 및 파트너 제안을<br>기다립니다</h2></div></div>
+    <div class="fform rv">
+      <div>
+        <h3>문의하기</h3>
+        <p class="lead">가맹, 샵인샵, 제휴, 보가LAB 도입 등 남겨주신 내용은 확인 후 연락드립니다.</p>
+        <div class="quick">
+          <a href="#" data-brand-fran="sunja"><b>순자국밥 가맹 문의</b><i>바로가기 →</i></a>
+          <a href="#" data-brand-fran="go"><b>고명희냉면 가맹 문의</b><i>바로가기 →</i></a>
+          <a href="#" data-brand-fran="yuk"><b>육연회담 가맹 문의</b><i>바로가기 →</i></a>
+        </div>
+      </div>
+      <form id="fform" class="fields" novalidate>
+        <div class="full"><label for="f-type">문의 유형</label>
+          <select id="f-type" name="type">
+            <option>가맹 문의 - 순자국밥</option><option>가맹 문의 - 고명희냉면</option><option>가맹 문의 - 육연회담</option>
+            <option>샵인샵 · 업종변경 문의</option><option>보가LAB 도입 문의</option><option>제휴 · 협력 제안</option><option>기타</option>
+          </select></div>
+        <div><label for="f-name">이름 / 회사명</label><input id="f-name" name="name" placeholder="홍길동"></div>
+        <div><label for="f-tel">연락처</label><input id="f-tel" name="tel" type="tel" placeholder="010-0000-0000"></div>
+        <div class="full"><label for="f-area">희망 지역 / 운영 중인 매장</label><input id="f-area" name="area" placeholder="예) 서울 OO구 / 현재 OO 운영 중"></div>
+        <div class="full"><label for="f-msg">문의 내용</label><textarea id="f-msg" name="msg" placeholder="문의하실 내용을 자유롭게 남겨주세요"></textarea></div>
+        <label class="agree full"><input type="checkbox" id="f-agree"> 개인정보 수집 및 이용에 동의합니다 (필수)</label>
+        <button type="submit" class="btn btn-primary full">문의 보내기</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <div class="band rv">
+      <div><img src="../images/logo-white.png" alt="보통의가치"><h2>지극히 평범한 보통의 사람들이<br>만들어내는 비범한 가치</h2></div>
+      <a href="#contact" class="btn">함께하기 →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ※ 대표자 · 주소 · 연락처 · 이메일 · 사업자 정보는 시안 단계라 가려둠. 오픈 전 입력하세요. -->
+<footer class="ft">
+  <div class="wrap row">
+    <div><img src="../images/logo.png" alt="보통의가치"><p class="slogan">지극히 평범한 보통의 사람들이 만들어내는 비범한 가치</p><p>© 2026 ㈜보통의가치. All rights reserved.</p></div>
+    <a class="alt" href="../">기본 버전 시안 보기 →</a>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+(() => {
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const ss = (a, b, v) => { const t = clamp((v - a) / (b - a)); return t * t * (3 - 2 * t); };
+  const root = document.documentElement;
+
+  /* ---------- loader ---------- */
+  const t0 = performance.now(); let started = false;
+  const start = () => { if (started) return; started = true;
+    setTimeout(() => { $('#loader').classList.add('done'); document.body.classList.add('ready'); }, Math.max(0, 1350 - (performance.now() - t0))); };
+  if (document.readyState === 'complete') start(); else addEventListener('load', start);
+  setTimeout(start, 3500);
+
+  /* ---------- elements ---------- */
+  const hero = $('.hero'), say = $('.say'), brands = $('.brands'), bstick = $('#bstick'), hmenu = $('.hmenu'), road = $('.road');
+  const words = $$('.say-text .w');
+  const plates = $$('.plate'), panels = $$('.panel'), bwords = $$('.bg-word'), bdots = $$('#bdots button');
+  const BCOL = [[255, 242, 216], [228, 239, 247], [248, 232, 228]];
+  const track = $('#hmtrack'), hcards = $$('.hcard');
+  const grid = $('#dotgrid'), roadnum = $('#roadnum');
+  for (let i = 0; i < 100; i++) { const d = document.createElement('i'); if (i < 3) d.className = 'open'; grid.appendChild(d); }
+  const dots = $$('i', grid);
+  const tilts = $$('.tilt-wrap');
+  const mq = $('#mqin'); mq.innerHTML += mq.innerHTML;
+
+  /* pinned 진행률: 섹션 맨 위가 화면 위에 닿으면 0, 섹션 끝이 화면 아래에 닿으면 1 */
+  const prog = el => { const r = el.getBoundingClientRect(), d = r.height - innerHeight; return d > 0 ? clamp(-r.top / d) : 0; };
+  const near = el => { const r = el.getBoundingClientRect(); return r.bottom > -innerHeight * .5 && r.top < innerHeight * 1.5; };
+
+  let hmMax = 0;
+  const layout = () => { hmMax = Math.max(0, track.scrollWidth - innerWidth); hmenu.style.height = (innerHeight + hmMax) + 'px'; };
+
+  let lastCnt = -1, lastDot = -1, ticking = false;
+  const frame = () => {
+    ticking = false;
+    const y = scrollY, max = root.scrollHeight - innerHeight;
+    $('#pbar').style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+    root.style.setProperty('--sy', y.toFixed(0));
+
+    if (near(hero)) { const p = prog(hero);
+      hero.style.setProperty('--p', p.toFixed(4)); hero.style.setProperty('--a', ss(0, .6, p).toFixed(4)); hero.style.setProperty('--b', ss(.28, .72, p).toFixed(4)); }
+
+    if (near(say)) { const p = prog(say), k = p * (words.length + 1.6);
+      words.forEach((w, i) => w.classList.toggle('on', k > i + .7)); say.classList.toggle('end', p > .8); }
+
+    if (near(brands)) { const p = prog(brands), N = plates.length, s = p * (N - 1); let rgb = [0, 0, 0], ws = 0;
+      for (let i = 0; i < N; i++) {
+        const t = s - i, at = Math.abs(t), sg = Math.sign(t), e = ss(.2, .8, at);
+        plates[i].style.transform = `translate(-50%,-50%) translateX(${(-sg * e * 88).toFixed(2)}vw) rotate(${(-sg * e * 210 + s * 46).toFixed(2)}deg) scale(${(1 - e * .45).toFixed(3)})`;
+        const o = 1 - ss(.1, .38, at);
+        panels[i].style.opacity = o.toFixed(3); panels[i].style.transform = `translateY(${(-t * 80).toFixed(1)}px)`;
+        panels[i].style.visibility = o < .01 ? 'hidden' : 'visible'; panels[i].style.pointerEvents = at < .3 ? 'auto' : 'none';
+        bwords[i].style.opacity = (1 - ss(.08, .6, at)).toFixed(3);
+        bwords[i].style.transform = `translate(-50%,-50%) translateX(${(-t * 46 - (s - 1) * 4).toFixed(2)}vw)`;
+        const w = Math.max(0, 1 - at); ws += w; for (let c = 0; c < 3; c++) rgb[c] += BCOL[i][c] * w;
+      }
+      bstick.style.backgroundColor = `rgb(${rgb.map(v => Math.round(v / (ws || 1))).join(',')})`;
+      const a = Math.round(s); if (a !== lastDot) { bdots.forEach((b, i) => b.classList.toggle('on', i === a)); lastDot = a; }
+    }
+
+    if (near(hmenu)) { const p = prog(hmenu);
+      track.style.transform = `translate3d(${(-p * hmMax).toFixed(1)}px,0,0)`; hmenu.style.setProperty('--p', p.toFixed(4));
+      const vw = innerWidth; hcards.forEach(c => { const r = c.getBoundingClientRect(); c.style.setProperty('--k', clamp((r.left + r.width / 2 - vw / 2) / (vw * .62), -1, 1).toFixed(3)); }); }
+
+    if (near(road)) { const p = prog(road), cnt = Math.round(ss(.04, .82, p) * 100);
+      if (cnt !== lastCnt) { dots.forEach((d, i) => d.classList.toggle('on', i < cnt)); roadnum.textContent = cnt; lastCnt = cnt; }
+      road.classList.toggle('end', p > .86); }
+
+    tilts.forEach(w => { const r = w.getBoundingClientRect(); if (r.bottom < -200 || r.top > innerHeight + 200) return; w.style.setProperty('--v', ss(0, 1, (innerHeight - r.top) / (innerHeight * .8)).toFixed(4)); });
+  };
+  const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
+  addEventListener('scroll', req, { passive: true });
+  addEventListener('resize', () => { layout(); req(); });
+  layout(); frame(); addEventListener('load', () => { layout(); frame(); });
+
+  /* 마우스 따라 살짝 움직임 */
+  if (matchMedia('(pointer:fine)').matches) addEventListener('pointermove', e => {
+    root.style.setProperty('--mx', ((e.clientX / innerWidth) * 2 - 1).toFixed(3)); root.style.setProperty('--my', ((e.clientY / innerHeight) * 2 - 1).toFixed(3)); }, { passive: true });
+
+  /* 브랜드 점 클릭 → 해당 브랜드 위치로 */
+  bdots.forEach((b, i) => b.addEventListener('click', () => scrollTo({ top: brands.offsetTop + (i / (bdots.length - 1)) * (brands.offsetHeight - innerHeight), behavior: 'smooth' })));
+
+  /* reveal + count up */
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .14 });
+  $$('.rv').forEach(el => io.observe(el));
+  $$('#ctable tbody tr').forEach((tr, i) => tr.style.transitionDelay = (.25 + i * .07) + 's');
+  const cio = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; cio.unobserve(e.target);
+    const el = e.target, to = +el.dataset.to, comma = el.dataset.comma, s0 = performance.now(), dur = 1700;
+    const tick = t => { const p = Math.min(1, (t - s0) / dur), v = Math.round(to * (1 - Math.pow(1 - p, 4))); el.textContent = comma ? v.toLocaleString('ko-KR') : v; if (p < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }), { threshold: .6 });
+  $$('.cnt').forEach(el => cio.observe(el));
+
+  /* 문의 */
+  const toast = msg => { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2600); };
+  const FRAN = { sunja: '가맹 문의 - 순자국밥', go: '가맹 문의 - 고명희냉면', yuk: '가맹 문의 - 육연회담' };
+  $$('[data-brand-fran]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); $('#f-type').value = FRAN[a.dataset.brandFran]; $('#contact').scrollIntoView({ behavior: 'smooth' }); }));
+  $('#fform').addEventListener('submit', e => {
+    e.preventDefault(); const f = e.target;
+    if (!f.name.value.trim() || !f.tel.value.trim()) return toast('이름과 연락처를 입력해 주세요.');
+    if (!$('#f-agree').checked) return toast('개인정보 수집 및 이용에 동의해 주세요.');
+    toast('문의가 접수되었습니다. 곧 연락드릴게요!'); f.reset();
+  });
+})();
+</script>
+</body>
+</html>
