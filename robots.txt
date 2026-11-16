@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /motion/
+
+Sitemap: https://xn--o39am53a9yh3ih6oe.com/sitemap.xml
