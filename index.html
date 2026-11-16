@@ -338,6 +338,35 @@
     .ft .fam{align-items:flex-start}
   }
 
+  /* =================== 경쟁력 3가지 (처방 · 수익 · 운영) =================== */
+  .scard.pill{display:flex;flex-direction:column}
+  .scard .pnum{font-size:13px;font-weight:800;color:var(--brand);letter-spacing:.1em}
+  .scard .viz{height:76px;display:flex;align-items:center;margin:16px 0 22px}
+  .scard .pl{font-weight:700;color:var(--ink);margin:0 0 10px;font-size:15px;line-height:1.6}
+  .scard ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+  .scard li{display:flex;gap:9px;font-size:14px;color:#4a4650;line-height:1.55}
+  .scard li::before{content:"";flex:none;width:9px;height:9px;margin-top:.5em;background:var(--brand);-webkit-mask:var(--ast) center/contain no-repeat;mask:var(--ast) center/contain no-repeat}
+  .scard ul.chips{flex-direction:row;flex-wrap:wrap;gap:6px}
+  .scard ul.chips li{background:var(--bg2);padding:8px 13px;border-radius:999px;font-weight:600;color:#3a3640}
+  .scard ul.chips li::before{display:none}
+  .combo{display:flex;align-items:center;gap:8px}
+  .combo span{height:48px;padding:0 20px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;color:#fff}
+  .combo .a{background:#de7736}
+  .combo i{font-style:normal;font-weight:800;color:var(--brand);font-size:22px}
+  .combo .b{position:relative;width:104px;overflow:hidden;animation:cbg 6s infinite}
+  .combo .b em{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-style:normal;animation:c1 6s infinite}
+  .combo .b em+em{animation-name:c2}
+  @keyframes cbg{0%,42%{background:#2f6fb5}50%,92%{background:#b8432f}100%{background:#2f6fb5}}
+  @keyframes c1{0%,42%{opacity:1;transform:none}50%,92%{opacity:0;transform:translateY(-14px)}100%{opacity:1;transform:none}}
+  @keyframes c2{0%,42%{opacity:0;transform:translateY(14px)}50%,92%{opacity:1;transform:none}100%{opacity:0;transform:translateY(14px)}}
+  .lab-feats{display:flex;flex-wrap:wrap;gap:8px;margin:-24px 0 40px}
+  .lab-feats span{padding:10px 16px;border-radius:999px;background:var(--bg2);font-weight:700;font-size:14px;color:#3a3640}
+  .lab-feats span.new{background:var(--brand-soft);color:var(--brand)}
+  .lab-feats span.new i{font-style:normal;font-size:11px;font-weight:700;margin-left:6px;padding:2px 7px;border-radius:999px;background:#fff}
+  .fhi b .cond{display:block;font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0;margin-top:6px}
+  .band-sub{margin-top:14px;color:rgba(255,255,255,.75);font-size:15px}
+  @media (prefers-reduced-motion:reduce){.combo .b,.combo .b em{animation:none}.combo .b em+em{display:none}.combo .b{background:#2f6fb5}}
+
   /* =================== MOTION (레이아웃은 그대로, 움직임만 추가) =================== */
   :root{--ease2:cubic-bezier(.16,.84,.24,1)}
   .pbar{position:fixed;left:0;top:0;right:0;height:3px;background:var(--brand);transform-origin:left;transform:scaleX(0);z-index:70;pointer-events:none}
@@ -469,9 +498,8 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <p class="quote rv">'보통의가치'</p>
     <h1 class="rv d1">지극히 평범한<br class="mo"> 보통의 사람들이<br>만들어내는 <span class="u">비범한 가치</span></h1>
-    <p class="lead rv d2">브랜드의 시작부터 운영의 완성까지, 보통의가치가 설계합니다.<br>순자국밥 · 고명희냉면 · 육연회담을 만드는 한식 프랜차이즈 기업입니다.</p>
+    <p class="lead rv d2">매장을 진단하고, 사장님 가게에 맞는 브랜드 조합을 처방합니다.<br>순자국밥 · 고명희냉면 · 육연회담을 만드는 한식 프랜차이즈 기업입니다.</p>
     <div class="hero-cta rv d3">
       <a href="#brands" class="btn btn-primary">브랜드 보기</a>
       <a href="#franchise" class="btn btn-line">창업 안내</a>
@@ -598,13 +626,32 @@
 <section class="strength" id="strength">
   <div class="wrap">
     <div class="sec-head">
-      <div><span class="eyebrow rv">OPERATING MODEL</span><h2 class="h2 rv d1">보통의가치만의<br><em>브랜드 경쟁력</em></h2></div>
-      <p class="lead rv d2" style="max-width:420px">원가 경쟁력 · 샵인샵 확장 · 보가LAB 운영 지원. 가맹점이 남는 구조를 먼저 설계합니다.</p>
+      <div><span class="eyebrow rv">WHY BOTONG VALUE</span><h2 class="h2 rv d1">묶지 않습니다.<br class="mo"> 숨기지 않습니다.<br><em>사장님 가게에 맞는<br class="mo"> 조합</em>만 드립니다.</h2></div>
+      <p class="lead rv d2" style="max-width:400px">처방하는 본사, 진짜 돈 버는 장사, 사장님 일을 줄이는 본사. 보통의가치가 일하는 방식입니다.</p>
     </div>
     <div class="sgrid">
-      <div class="scard rv"><div class="big"><span class="cnt" data-to="30">30</span>%<small>이하</small></div><h3>낮은 본사 물류마진</h3><p>물류마진 최소화를 목표로 원가율 30% 이하를 기획하고, 가맹점의 수익성을 높입니다.</p></div>
-      <div class="scard rv d1"><div class="big">+<small>샵인샵</small></div><h3>다양한 브랜드로<br>매출을 더하다</h3><p>한 주방의 샵인샵 운영으로 고객층과 주문 유입을 넓히고 추가 매출을 만듭니다.</p></div>
-      <div class="scard rv d2"><img class="labicon" src="images/bogalab-logo.png" alt="보가LAB"><h3>통합운영프로그램<br>'보가LAB'</h3><p>매장 운영의 모든 것을 한 곳에서. 매출 · 운영 · 리뷰를 통합 관리하는 프로그램을 개발해 제공합니다.</p></div>
+      <div class="scard pill rv">
+        <span class="pnum">01</span>
+        <div class="viz"><div class="combo"><span class="a">국밥</span><i>+</i><span class="b"><em>냉면</em><em>김치찜</em></span></div></div>
+        <h3>처방하는 본사</h3>
+        <p class="pl">매장을 진단하고 브랜드 조합을 처방합니다.</p>
+        <p>상권, 주방설비, 영업시간, 인력을 보고 “이 매장은 국밥+냉면, 저 매장은 국밥+김치찜”으로 처방합니다. 팔 것이 하나뿐인 단일 브랜드 본사는 구조상 할 수 없는 일입니다.</p>
+        <ul><li>상권 · 주방설비 · 영업시간 · 인력 진단</li><li>상권별 배달 수요 데이터 (한식 브랜드 중심)</li></ul>
+      </div>
+      <div class="scard pill rv d1">
+        <span class="pnum">02</span>
+        <div class="viz"><div class="big"><span class="cnt" data-to="30">30</span>%<small>원가율 설계</small></div></div>
+        <h3>진짜 돈 버는 장사</h3>
+        <p class="pl">진짜 돈 버는 장사를 위해, 구조부터 설계합니다.</p>
+        <ul><li>브랜드 원가율 30% 설계</li><li>샵인샵, 브랜드로 매출을 더하다</li><li>로열티 월 20만원 (월 매출 3천만원 이상 시)</li><li>가맹비 면제</li><li>해지위약금 없음, 충분히 느끼고 누려본 뒤 판단하세요</li></ul>
+      </div>
+      <div class="scard pill rv d2">
+        <span class="pnum">03</span>
+        <div class="viz"><img class="labicon" src="images/bogalab-logo.png" alt="보가LAB"></div>
+        <h3>사장님 일을 줄이는 본사</h3>
+        <p class="pl">운영 효율화와 AI 봇, 보가LAB이 지원합니다.</p>
+        <ul class="chips"><li>통합솔루션</li><li>리뷰 답글</li><li>광고 조정</li><li>손익 관리</li><li>인력 관리</li><li>문의 응대</li></ul>
+      </div>
     </div>
   </div>
 </section>
@@ -614,8 +661,9 @@
   <div class="wrap">
     <div class="lab-head">
       <img src="images/bogalab-logo.png" alt="보가LAB 로고" class="rv">
-      <div><span class="eyebrow rv">BOGA LAB</span><h2 class="h2 rv d1" style="margin-top:12px">보가LAB : 매출 · 운영 <em>통합관리시스템</em></h2></div>
+      <div><span class="eyebrow rv">BOGA LAB</span><h2 class="h2 rv d1" style="margin-top:12px">보가LAB : 매출 · 운영 <em>통합관리시스템</em></h2><p class="lead rv d2" style="margin-top:10px">현장에서 쌓은 경험을, 매장이 활용할 수 있는 기준으로</p></div>
     </div>
+    <div class="lab-feats rv"><span>통합솔루션</span><span>리뷰 답글</span><span>광고 조정</span><span>손익 관리</span><span>인력 관리</span><span>문의 응대</span><span class="new">상권별 배달 수요 데이터<i>추가 예정</i></span></div>
     <div class="lab-grid">
       <div class="lab-card rv">
         <div class="shot"><img src="images/bogalab-review.jpg" alt="보가LAB 리뷰관리 화면" loading="lazy"></div>
@@ -629,36 +677,18 @@
   </div>
 </section>
 
-<!-- ============ ROADMAP ============ -->
-<section class="road">
-  <div class="wrap">
-    <div class="road-box rv">
-      <div>
-        <span class="eyebrow">GROWTH ROADMAP</span>
-        <h2 class="h2">1년 동안<br><b><span class="cnt" data-to="100">100</span>개 점포</b> 오픈 목표</h2>
-        <p class="lead">순자국밥 기준 매장 확대 목표입니다.</p>
-      </div>
-      <div class="opens">
-        <p class="open-date">2026.11.27 · 3개점 동시 오픈</p>
-        <div class="st rv d1">파주<span>직영 · 오픈 예정</span></div>
-        <div class="st rv d2">중랑<span>오픈 예정</span></div>
-        <div class="st rv d3">천호<span>오픈 예정</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ FRANCHISE COST ============ -->
 <section class="fran" id="franchise">
   <div class="wrap">
     <div class="sec-head">
       <div><span class="eyebrow rv">OPENING BUDGET</span><h2 class="h2 rv d1">개설비용 안내</h2></div>
-      <p class="lead rv d2" style="max-width:420px">신규 개설과 샵인샵(업종변경)의 항목별 참고 예산입니다. (순자국밥 기준 · VAT 별도)</p>
+      <p class="lead rv d2" style="max-width:440px"><b style="color:var(--ink)">운영 방식에 따라 달라지는 수익 구조.</b><br>신규 개설과 샵인샵(업종변경)의 항목별 참고 예산입니다. (순자국밥 기준 · VAT 별도)</p>
     </div>
     <div class="fgrid">
       <div class="fhi rv">
         <div><small>가맹비</small><b><em>면제</em></b></div>
-        <div><small>로열티</small><b><span class="cnt" data-to="2">2</span>%</b></div>
+        <div><small>해지위약금</small><b><em>없음</em></b></div>
+        <div class="wide"><small>로열티 (정액)</small><b>월 <span class="cnt" data-to="20">20</span>만원 <span class="cond">월 매출 3천만원 이상 시</span></b></div>
         <div class="wide"><small>샵인샵 · 업종변경 총액</small><b><em class="cnt" data-to="300">300</em>만원</b></div>
         <div class="wide"><small>신규 개설 총액</small><b><span class="cnt" data-to="3200" data-comma="1">3,200</span>만원</b></div>
       </div>
@@ -672,11 +702,12 @@
             <tr><td>시트지 · 간판</td><td>인테리어에 포함</td><td>100만원</td></tr>
             <tr><td>교육비</td><td>100만원</td><td>100만원</td></tr>
             <tr><td>가맹비</td><td>면제</td><td>면제</td></tr>
-            <tr><td>로열티</td><td>2%</td><td>2%</td></tr>
+            <tr><td>로열티 (정액)</td><td>월 20만원*</td><td>월 20만원*</td></tr>
+            <tr><td>해지위약금</td><td>없음</td><td>없음</td></tr>
             <tr class="total"><td>총액</td><td>3,200만원</td><td>300만원</td></tr>
           </tbody>
         </table>
-        <p class="note">※ 매장 규모와 입지에 따라 달라질 수 있으며, 정확한 비용은 상담 시 안내해 드립니다.</p>
+        <p class="note">* 로열티는 월 매출 3천만원 이상일 때 정액 월 20만원입니다.<br>※ 매장 규모와 입지에 따라 달라질 수 있으며, 정확한 비용은 상담 시 안내해 드립니다.</p>
       </div>
     </div>
   </div>
@@ -734,7 +765,7 @@
 <section class="closing">
   <div class="wrap">
     <div class="band rv">
-      <div><img src="images/logo-white.png" alt="보통의가치"><h2>지극히 평범한 보통의 사람들이<br>만들어내는 비범한 가치</h2></div>
+      <div><img src="images/logo-white.png" alt="보통의가치"><h2>한 끼에는 정성을,<br>장사에는 확신을.</h2><p class="band-sub">원가 경쟁력 · 하나의 주방에서 추가 매출 · 운영 자동화 시스템</p></div>
       <a href="#contact" class="btn">함께하기 →</a>
     </div>
   </div>
@@ -764,7 +795,7 @@
 </footer>
 
 <div class="bar" id="bar">
-  <div><div class="t1">순자국밥 · 고명희냉면 · 육연회담</div><div class="t2">가맹비 면제, 샵인샵 300만원부터</div></div>
+  <div><div class="t1">순자국밥 · 고명희냉면 · 육연회담</div><div class="t2">가맹비 면제 · 해지위약금 없음</div></div>
   <div class="acts"><a href="#franchise" class="btn btn-sub">개설비용 보기</a><a href="#contact" class="btn btn-primary">문의하기</a></div>
 </div>
 <div class="toast" id="toast"></div>
