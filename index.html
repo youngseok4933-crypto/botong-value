@@ -384,6 +384,74 @@
   .menu-foot .marrows button{width:40px;height:40px;font-size:15px}
   @media (max-width:640px){.bsw-logo{width:170px}.bsw-logo img{max-width:160px;max-height:36px}.bsw-logo img.tall{max-height:54px}.btabs button{padding:0 12px;font-size:13px;height:36px}}
 
+  /* =================== 브랜드 상세 팝업 =================== */
+  .bcard .ph,.bcard .blogo{cursor:pointer}
+  .bcard .act a.more{background:var(--brand);border-color:var(--brand);color:#fff}
+  .bcard .act a.more:hover{background:var(--brand-hover);color:#fff}
+  html.bm-lock{overflow:hidden}
+  .bmodal{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;padding:28px;visibility:hidden;pointer-events:none}
+  .bmodal.open{visibility:visible;pointer-events:auto}
+  .bm-dim{position:absolute;inset:0;background:rgba(24,22,27,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;transition:opacity .35s}
+  .bmodal.open .bm-dim{opacity:1}
+  .bm-panel{position:relative;width:min(1040px,100%);max-height:calc(100vh - 56px);background:#fff;border-radius:28px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px rgba(24,22,27,.3);opacity:0;transform:translateY(30px) scale(.97);transition:opacity .35s,transform .5s cubic-bezier(.16,.84,.24,1)}
+  .bmodal.open .bm-panel{opacity:1;transform:none}
+  .bm-top{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 20px 16px 24px;border-bottom:1px solid var(--line);flex:none}
+  .bm-nav{display:flex;align-items:center;gap:10px}
+  .bm-nav button,.bm-close{width:40px;height:40px;border-radius:50%;border:1px solid #d9d6d0;background:#fff;font-size:16px;flex:none;transition:.25s}
+  .bm-nav button:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+  .bm-close{border:0;background:var(--bg2);font-size:18px}
+  .bm-close:hover{background:var(--ink);color:#fff}
+  .bm-logo{position:relative;width:190px;height:48px}
+  .bm-logo img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);max-height:36px;max-width:180px;width:auto;opacity:0;transition:opacity .35s}
+  .bm-logo img.tall{max-height:48px}
+  .bm-logo img.on{opacity:1}
+  .bm-tabs{display:flex;gap:4px;background:var(--bg2);padding:4px;border-radius:999px}
+  .bm-tabs button{height:36px;padding:0 14px;border-radius:999px;font-size:13px;font-weight:700;color:var(--muted);transition:.25s}
+  .bm-tabs button.on{background:#fff;color:var(--brand);box-shadow:0 2px 8px rgba(24,22,27,.08)}
+  .bm-body{overflow-y:auto;padding:28px 32px 32px;transition:opacity .25s,transform .35s}
+  .bm-body.swap{opacity:0;transform:translateX(calc(var(--dir,1) * -24px))}
+  .bm-hero{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:center}
+  .bm-hero .ph{border-radius:22px;overflow:hidden;aspect-ratio:4/3;background:var(--bg2)}
+  .bm-hero .ph img{width:100%;height:100%;object-fit:cover}
+  .bm-badge{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;padding:6px 12px;border-radius:999px;background:var(--bc);color:#fff}
+  .bm-hero h3{font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.3;margin:16px 0 12px}
+  .bm-hero p{color:var(--muted);line-height:1.75}
+  .bm-h{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--brand);margin:36px 0 16px}
+  .bm-h::before{content:"";width:11px;height:11px;background:var(--brand);-webkit-mask:var(--ast) center/contain no-repeat;mask:var(--ast) center/contain no-repeat}
+  .bm-str{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .bm-str div{background:var(--bg2);border-radius:18px;padding:22px 22px 24px}
+  .bm-str b{display:block;font-size:12px;color:var(--bc);font-weight:800;letter-spacing:.08em}
+  .bm-str h5{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:10px 0 8px}
+  .bm-str p{font-size:14px;color:#55505c;line-height:1.65}
+  .bm-cats{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+  .bm-cats div{display:flex;gap:12px;align-items:flex-start;font-size:14px}
+  .bm-cats div b{flex:none;width:86px;font-weight:800;padding-top:5px}
+  .bm-cats div span{display:flex;flex-wrap:wrap;gap:6px}
+  .bm-cats div span i{font-style:normal;padding:5px 11px;border-radius:999px;background:var(--bg2);color:#3a3640;font-weight:600}
+  .bm-menu{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .bm-menu .ph{aspect-ratio:1;border-radius:16px;overflow:hidden;background:#fff2d8;position:relative}
+  .bm-menu .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.16,.84,.24,1)}
+  .bm-menu > div:hover .ph img{transform:scale(1.06)}
+  .bm-menu .pick{position:absolute;top:10px;left:10px;background:#de7736;color:#fff;font-size:11px;font-weight:800;padding:4px 9px;border-radius:7px;z-index:1}
+  .bm-menu h6{font-size:15px;font-weight:700;margin-top:10px}
+  .bm-menu p{font-size:13px;color:var(--muted);margin-top:2px}
+  .bm-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
+  .bm-foot small{color:var(--muted);font-size:13px}
+  .bm-foot .btn{height:48px;border-radius:14px}
+  @media (max-width:820px){
+    .bmodal{padding:0;align-items:flex-end}
+    .bm-panel{border-radius:24px 24px 0 0;max-height:94vh;max-height:94svh}
+    .bm-top{flex-wrap:wrap;padding:12px 14px}
+    .bm-tabs{order:3;width:100%;justify-content:center}
+    .bm-logo{width:150px}
+    .bm-logo img{max-width:140px;max-height:30px}.bm-logo img.tall{max-height:42px}
+    .bm-body{padding:20px 18px 26px}
+    .bm-hero{grid-template-columns:1fr;gap:16px}
+    .bm-str{grid-template-columns:1fr}
+    .bm-menu{grid-template-columns:repeat(2,1fr);gap:12px}
+    .bm-cats div{flex-direction:column;gap:6px}.bm-cats div b{padding:0}
+  }
+
   /* =================== MOTION (레이아웃은 그대로, 움직임만 추가) =================== */
   :root{--ease2:cubic-bezier(.16,.84,.24,1)}
   .pbar{position:fixed;left:0;top:0;right:0;height:3px;background:var(--brand);transform-origin:left;transform:scaleX(0);z-index:70;pointer-events:none}
@@ -562,8 +630,8 @@
     </div>
     <div class="biz">
       <div class="bizcard rv"><span class="num">01</span><div><h3>브랜드 개발</h3><p>다양한 한식 프랜차이즈 브랜드를<br>기획 · 개발 · 오픈 · 관리합니다.</p></div></div>
-      <div class="bizcard rv d1"><span class="num">02</span><div><h3>자동화 운영</h3><p>통합운영 프로그램 '보가LAB'과 AI 봇으로<br>리뷰 · 광고 · 손익 관리를 자동화합니다.</p></div></div>
-      <div class="bizcard rv d2"><span class="num">03</span><div><h3>원가 경쟁력</h3><p>식자재와 물류를 직접 관리해<br>낮은 물류마진, 원가율 30% 구조를 만듭니다.</p></div></div>
+      <div class="bizcard rv d1"><span class="num">02</span><div><h3>운영 자동화 시스템</h3><p>사장님 일을 줄이는 본사. 통합솔루션 · 리뷰 답글 · 광고 조정 ·<br>손익 · 인력 관리 · 문의 응대를 보가LAB이 지원합니다.</p></div></div>
+      <div class="bizcard rv d2"><span class="num">03</span><div><h3>원가 경쟁력</h3><p>진짜 돈 버는 장사를 위해, 원가율 30%로<br>구조부터 설계합니다.</p></div></div>
     </div>
   </div>
 </section>
@@ -584,7 +652,7 @@
           <p class="copy">한 그릇에 담긴 순자엄마의 마음</p>
           <p class="desc">넉넉히 담아주는 엄마의 포근함처럼, 든든하고 따뜻한 국밥 한 그릇을 만듭니다.</p>
           <div class="menus"><span>얼큰순자국밥</span><span>돼지국밥</span><span>순대국밥</span><span>갈비탕</span><span>보쌈수육</span></div>
-          <div class="act"><a href="#menu" data-menu="sunja">메뉴 보기</a><a href="#" data-brand-site="sunja">브랜드 사이트 ↗</a><a href="#" data-brand-fran="sunja">가맹 문의</a></div>
+          <div class="act"><a href="#" class="more" data-bopen="sunja">강점 · 메뉴 보기 →</a><a href="#" data-brand-site="sunja">브랜드 사이트 ↗</a><a href="#" data-brand-fran="sunja">가맹 문의</a></div>
         </div>
       </article>
       <article class="bcard rv d1">
@@ -594,7 +662,7 @@
           <p class="copy">30년의 노하우, 한 그릇의 냉면</p>
           <p class="desc">30년 전통 수제 레시피 그대로, 싱싱한 과일을 직접 우려낸 육수로 만듭니다.</p>
           <div class="menus"><span>물냉면</span><span>비빔냉면</span><span>불냉면</span><span>만두</span></div>
-          <div class="act"><a href="#menu" data-menu="go">메뉴 보기</a><a href="#" data-brand-site="go">브랜드 사이트 ↗</a><a href="#" data-brand-fran="go">가맹 문의</a></div>
+          <div class="act"><a href="#" class="more" data-bopen="go">강점 · 메뉴 보기 →</a><a href="#" data-brand-site="go">브랜드 사이트 ↗</a><a href="#" data-brand-fran="go">가맹 문의</a></div>
         </div>
       </article>
       <article class="bcard rv d2">
@@ -604,7 +672,7 @@
           <p class="copy">육회 · 연어 · 초밥 브랜드</p>
           <p class="desc">매일 가락시장에서 직접 공수해, 그날 들어온 재료는 그날 조리하는 것을 원칙으로 합니다.</p>
           <div class="menus"><span>최상급 육회</span><span>생연어 사시미</span><span>모듬초밥</span><span>육회비빔밥</span></div>
-          <div class="act"><a href="#menu" data-menu="yuk">메뉴 보기</a><a href="#" data-brand-site="yuk">브랜드 사이트 ↗</a><a href="#" data-brand-fran="yuk">가맹 문의</a></div>
+          <div class="act"><a href="#" class="more" data-bopen="yuk">강점 · 메뉴 보기 →</a><a href="#" data-brand-site="yuk">브랜드 사이트 ↗</a><a href="#" data-brand-fran="yuk">가맹 문의</a></div>
         </div>
       </article>
     </div>
@@ -612,38 +680,6 @@
       <b>다양한 한식 브랜드를 만들어 갑니다<small>런칭 예정 브랜드</small></b>
       <div class="list"><span><i>SOON</i>막내해장국</span><span><i>SOON</i>큰이모김치찜</span><span><i>SOON</i>주먹아구찜</span></div>
     </div>
-  </div>
-</section>
-
-<!-- ============ MAIN BRAND MENU ============ -->
-<section class="menu" id="menu">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow rv">MENU PORTFOLIO</span>
-        <div class="bsw rv d1">
-          <button class="bsw-btn" id="bprev" aria-label="이전 브랜드">←</button>
-          <div class="bsw-logo" id="bswlogo"><img class="on" data-k="sunja" src="images/brand-sunja.png" alt="순자국밥"><img data-k="go" src="images/brand-gomyung.png" alt="고명희냉면"><img class="tall" data-k="yuk" src="images/brand-yukyeon.png" alt="육연회담"></div>
-          <button class="bsw-btn" id="bnext" aria-label="다음 브랜드">→</button>
-        </div>
-        <h2 class="h2 rv d1" style="font-size:clamp(26px,3vw,38px)">대표 메뉴</h2>
-      </div>
-      <div class="btabs rv" id="btabs"><button class="on" data-k="sunja">순자국밥</button><button data-k="go">고명희냉면</button><button data-k="yuk">육연회담</button></div>
-    </div>
-    <div class="mtrack" id="mtrack">
-      <div class="mitem"><div class="ph"><img src="images/menu-19.jpg" alt="얼큰순자국밥" loading="lazy"></div><h4>얼큰순자국밥</h4><p>13,000원</p></div>
-      <div class="mitem"><div class="ph"><img src="images/menu-22.jpg" alt="돼지국밥" loading="lazy"></div><h4>돼지국밥</h4><p>12,000원</p></div>
-      <div class="mitem"><div class="ph"><img src="images/menu-25.jpg" alt="얼큰돼지국밥" loading="lazy"></div><h4>얼큰돼지국밥</h4><p>13,000원</p></div>
-      <div class="mitem"><div class="ph"><img src="images/menu-28.jpg" alt="살코기국밥" loading="lazy"></div><h4>살코기국밥</h4><p>12,000원</p></div>
-      <div class="mitem"><div class="ph"><img src="images/menu-34.jpg" alt="순대국밥" loading="lazy"></div><h4>순대국밥</h4><p>12,000원</p></div>
-      <div class="mitem"><div class="ph"><span class="pick">PICK!</span><img src="images/menu-39.jpg" alt="갈비탕" loading="lazy"></div><h4>갈비탕</h4><p>14,000원</p></div>
-      <div class="mitem"><div class="ph"><img src="images/menu-42.jpg" alt="장터소국밥" loading="lazy"></div><h4>장터소국밥</h4><p>14,000원</p></div>
-      <div class="mitem"><div class="ph"><img src="images/menu-45.jpg" alt="김치찌개" loading="lazy"></div><h4>김치찌개</h4><p>14,000원</p></div>
-      <div class="mitem"><div class="ph"><img src="images/menu-49.jpg" alt="보쌈수육" loading="lazy"></div><h4>보쌈수육</h4><p>12,000원</p></div>
-      <div class="mitem"><div class="ph"><img src="images/menu-52.jpg" alt="순대한상" loading="lazy"></div><h4>순대한상</h4><p>9,000원</p></div>
-      <div class="mitem"><div class="ph"><img src="images/menu-58.jpg" alt="고기왕만두" loading="lazy"></div><h4>고기왕만두</h4><p>6,000원</p></div>
-    </div>
-    <div class="menu-foot"><small id="mnote">※ 메뉴 구성과 가격은 매장에 따라 다를 수 있습니다.</small><div class="marrows"><button id="mprev" aria-label="메뉴 이전">←</button><button id="mnext" aria-label="메뉴 다음">→</button></div></div>
   </div>
 </section>
 
@@ -825,6 +861,23 @@
 </div>
 <div class="toast" id="toast"></div>
 
+<!-- ============ 브랜드 상세 팝업 (강점 · 메뉴 라인업) ============ -->
+<div class="bmodal" id="bmodal" role="dialog" aria-modal="true" aria-label="브랜드 상세" aria-hidden="true">
+  <div class="bm-dim" data-bclose></div>
+  <div class="bm-panel">
+    <div class="bm-top">
+      <div class="bm-nav">
+        <button id="bmprev" aria-label="이전 브랜드">←</button>
+        <div class="bm-logo" id="bmlogo"><img data-k="sunja" src="images/brand-sunja.png" alt="순자국밥"><img data-k="go" src="images/brand-gomyung.png" alt="고명희냉면"><img class="tall" data-k="yuk" src="images/brand-yukyeon.png" alt="육연회담"></div>
+        <button id="bmnext" aria-label="다음 브랜드">→</button>
+      </div>
+      <div class="bm-tabs" id="bmtabs"><button data-k="sunja">순자국밥</button><button data-k="go">고명희냉면</button><button data-k="yuk">육연회담</button></div>
+      <button class="bm-close" data-bclose aria-label="닫기">✕</button>
+    </div>
+    <div class="bm-body" id="bmbody"></div>
+  </div>
+</div>
+
 <script>
 /* ===== 브랜드 사이트 주소: 정해지면 여기만 수정하세요 (비어 있으면 버튼이 숨겨집니다) ===== */
 const BRAND_LINKS = {
@@ -853,8 +906,8 @@ const BRAND_LINKS = {
 
   const track = $('#mtrack');
   const step = () => (track.querySelector('.mitem')?.offsetWidth || 220) + 18;
-  $('#mprev').onclick = () => track.scrollBy({ left: -step() * 2, behavior: 'smooth' });
-  $('#mnext').onclick = () => track.scrollBy({ left: step() * 2, behavior: 'smooth' });
+  if ($('#mprev')) $('#mprev').onclick = () => track.scrollBy({ left: -step() * 2, behavior: 'smooth' });
+  if ($('#mnext')) $('#mnext').onclick = () => track.scrollBy({ left: step() * 2, behavior: 'smooth' });
 
   const toast = msg => { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2600); };
   const FRAN_LABEL = { sunja: '가맹 문의 - 순자국밥', go: '가맹 문의 - 고명희냉면', yuk: '가맹 문의 - 육연회담' };
@@ -952,58 +1005,69 @@ const BRAND_LINKS = {
 })();
 </script>
 <script>
-/* =================== 대표 메뉴: 브랜드 전환 =================== */
+/* =================== 브랜드 상세 팝업 =================== */
 (() => {
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-  const track = $('#mtrack'); if (!track) return;
   const ORDER = ['sunja', 'go', 'yuk'];
-  const card = (it) => `<div class="mitem"><div class="ph">${it.pick ? '<span class="pick">PICK!</span>' : ''}<img src="${it.img}" alt="${it.name}" loading="lazy"></div><h4>${it.name}</h4><p>${it.sub}</p></div>`;
-  const MENUS = {
-    sunja: { html: track.innerHTML, note: '※ 메뉴 구성과 가격은 매장에 따라 다를 수 있습니다.' },
-    go: { note: '※ 메뉴 구성은 매장에 따라 다를 수 있습니다.', items: [
-      { img: 'images/menu-go-1.jpg', name: '고명희냉면', sub: '시그니처', pick: true },
-      { img: 'images/menu-go-2.jpg', name: '물냉면', sub: '냉면' },
-      { img: 'images/menu-go-3.jpg', name: '비빔냉면', sub: '냉면' },
-      { img: 'images/menu-go-4.jpg', name: '불냉면', sub: '냉면' },
-      { img: 'images/menu-go-5.jpg', name: '고기 · 김치찜만두', sub: '사이드' },
-      { img: 'images/menu-go-6.jpg', name: '등심돈가스', sub: '사이드' } ] },
-    yuk: { note: '※ 메뉴 구성은 매장에 따라 다를 수 있습니다.', items: [
-      { img: 'images/menu-yuk-1.jpg', name: '최상급 육회', sub: '육회 & 연어', pick: true },
-      { img: 'images/menu-yuk-2.jpg', name: '생연어 사시미', sub: '육회 & 연어' },
-      { img: 'images/menu-yuk-3.jpg', name: '모듬초밥', sub: '초밥' },
-      { img: 'images/menu-yuk-4.jpg', name: '육회초밥', sub: '초밥' },
-      { img: 'images/menu-yuk-5.jpg', name: '육연비빔밥', sub: '비빔밥' },
-      { img: 'images/menu-yuk-6.jpg', name: '육회들기름막국수', sub: '면' },
-      { img: 'images/menu-yuk-7.jpg', name: '돈코츠라멘', sub: '면' } ] },
+  const B = {
+    sunja: { color: '#de7736', badge: 'MAIN BRAND · 국밥', photo: 'images/menu-19.jpg',
+      title: '한 그릇에 담긴<br>순자엄마의 마음', desc: '넉넉히 담아주는 엄마의 포근함처럼, 든든하고 따뜻한 국밥 한 그릇을 만듭니다.',
+      str: [['집밥 같은 든든함', '맛있게 익어가는 한 그릇의 온기, 넉넉히 담아주는 포근함, 오래 곁을 지켜준 집밥의 든든함을 담았습니다.'],
+            ['13가지 메뉴 라인업', '국밥 6종부터 갈비탕 · 김치찌개 · 보쌈수육 · 순대한상까지, 한 주방에서 내는 13가지 메뉴로 구성했습니다.'],
+            ['처방의 중심 브랜드', '국밥 + 냉면, 국밥 + 김치찜처럼 다른 브랜드와 조합하기 좋은 보통의가치의 메인 브랜드입니다.']],
+      cats: null, note: '※ 메뉴 구성과 가격은 매장에 따라 다를 수 있습니다.',
+      menu: [['19','얼큰순자국밥','13,000원'],['22','돼지국밥','12,000원'],['25','얼큰돼지국밥','13,000원'],['28','살코기국밥','12,000원'],['31','얼큰살코기국밥','13,000원'],['34','순대국밥','12,000원'],['39','갈비탕','14,000원',1],['42','장터소국밥','14,000원'],['45','김치찌개','14,000원'],['49','보쌈수육','12,000원'],['52','순대한상','9,000원'],['55','함박스테이크','4,000원'],['58','고기왕만두','6,000원']] },
+    go: { color: '#2f6fb5', badge: 'BRAND · 냉면', photo: 'images/menu-go-1.jpg',
+      title: '30년의 노하우,<br>한 그릇의 냉면', desc: '시원하고 깔끔한 육수에 정성 가득한 고명. 사계절 찾게 되는 냉면 브랜드입니다.',
+      str: [['30년 전통 수제 레시피', '30년 동안 지켜온 수제 레시피 그대로 만듭니다.'],
+            ['과일로 우려낸 육수', '기성 육수 대신 싱싱한 과일을 직접 우려낸 육수와 과일 단맛 다대기로, 먹고 나서도 속이 편안합니다.'],
+            ['국밥 + 냉면 조합', '국밥 매장 주방에 샵인샵으로 더하기 좋은 브랜드입니다.']],
+      cats: [['냉면', ['고명희냉면','물냉면','비빔냉면','불냉면']], ['사이드', ['등심돈가스','고기 · 김치찜만두','고기 · 김치 만두튀김','미니 모듬전']]],
+      note: '※ 메뉴 구성은 매장에 따라 다를 수 있습니다.',
+      menu: [['go-1','고명희냉면','시그니처',1],['go-2','물냉면','냉면'],['go-3','비빔냉면','냉면'],['go-4','불냉면','냉면'],['go-5','고기 · 김치찜만두','사이드'],['go-6','등심돈가스','사이드']] },
+    yuk: { color: '#c8323a', badge: 'BRAND · 육회 · 연어 · 초밥', photo: 'images/hero.jpg',
+      title: '육회와 초밥이<br>만나는 자리', desc: '신선한 육회와 연어, 초밥을 한 그릇으로 즐기는 브랜드입니다.',
+      str: [['매일 가락시장 공수', '매일 가락시장에서 직접 공수합니다.'],
+            ['당일 조리 원칙', '그날 들어온 재료는 그날 조리하고 판매합니다. 다음 날로 넘기는 재료가 없습니다.'],
+            ['21가지 한 그릇 라인업', '육회 · 연어부터 초밥, 비빔밥, 면까지 21가지 메뉴로 구성했습니다.']],
+      cats: [['육회 & 연어', ['최상급 육회','생연어 사시미']], ['초밥', ['모듬초밥','특모듬초밥','육회초밥','연어초밥','계란초밥','초새우초밥']], ['비빔밥', ['육회비빔밥','연어비빔밥','육연비빔밥','회덮밥','육회간장계란밥']], ['면', ['육회쫐면','육회비빔냉면','육회물냉면','돈코츠라멘','얼큰돈코츠라멘','육회들기름막국수','우동','냉모밀']]],
+      note: '※ 메뉴 구성은 매장에 따라 다를 수 있습니다.',
+      menu: [['yuk-1','최상급 육회','육회 & 연어',1],['yuk-2','생연어 사시미','육회 & 연어'],['yuk-3','모듬초밥','초밥'],['yuk-4','육회초밥','초밥'],['yuk-5','육연비빔밥','비빔밥'],['yuk-6','육회들기름막국수','면'],['yuk-7','돈코츠라멘','면']] },
   };
-  const logos = $$('#bswlogo img'), tabs = $$('#btabs button'), note = $('#mnote');
-  let cur = 'sunja', busy = false;
+  const FRAN = { sunja: '가맹 문의 - 순자국밥', go: '가맹 문의 - 고명희냉면', yuk: '가맹 문의 - 육연회담' };
+  const NAME = { sunja: '순자국밥', go: '고명희냉면', yuk: '육연회담' };
+  const modal = $('#bmodal'), body = $('#bmbody');
+  let cur = null, lastFocus = null;
+  const render = k => { const b = B[k];
+    return `<div style="--bc:${b.color}">
+      <div class="bm-hero"><div class="ph"><img src="${b.photo}" alt="${NAME[k]}"></div><div><span class="bm-badge">${b.badge}</span><h3>${b.title}</h3><p>${b.desc}</p></div></div>
+      <h4 class="bm-h">브랜드 강점</h4>
+      <div class="bm-str">${b.str.map((s, i) => `<div><b>0${i + 1}</b><h5>${s[0]}</h5><p>${s[1]}</p></div>`).join('')}</div>
+      <h4 class="bm-h">메뉴 라인업</h4>
+      ${b.cats ? `<div class="bm-cats">${b.cats.map(c => `<div><b>${c[0]}</b><span>${c[1].map(n => `<i>${n}</i>`).join('')}</span></div>`).join('')}</div>` : ''}
+      <div class="bm-menu">${b.menu.map(m => `<div><div class="ph">${m[3] ? '<span class="pick">PICK!</span>' : ''}<img src="images/menu-${m[0]}.jpg" alt="${m[1]}" loading="lazy"></div><h6>${m[1]}</h6><p>${m[2]}</p></div>`).join('')}</div>
+      <div class="bm-foot"><small>${b.note}</small><a href="#contact" class="btn btn-primary" data-mfran="${k}">${NAME[k]} 가맹 문의하기 →</a></div>
+    </div>`; };
+  const setHead = k => { $$('#bmlogo img').forEach(i => i.classList.toggle('on', i.dataset.k === k)); $$('#bmtabs button').forEach(b => b.classList.toggle('on', b.dataset.k === k)); };
   const show = (k, dir) => {
-    if (k === cur || busy) return;
-    busy = true;
-    dir = dir || (ORDER.indexOf(k) > ORDER.indexOf(cur) ? 1 : -1);
-    track.style.setProperty('--dir', dir);
-    track.classList.add('out');
-    logos.forEach(img => img.classList.toggle('on', img.dataset.k === k));
-    tabs.forEach(b => b.classList.toggle('on', b.dataset.k === k));
-    cur = k;
-    setTimeout(() => {
-      const m = MENUS[k];
-      track.innerHTML = m.html || m.items.map(card).join('');
-      track.scrollLeft = 0;
-      note.textContent = m.note;
-      track.classList.remove('out');
-      [...track.children].forEach((el, i) => { el.classList.remove('in'); el.style.transitionDelay = (i * .06) + 's'; });
-      requestAnimationFrame(() => requestAnimationFrame(() => [...track.children].forEach(el => el.classList.add('in'))));
-      busy = false;
-    }, 360);
+    if (k === cur) return;
+    const first = cur === null; cur = k; setHead(k);
+    if (first) { body.innerHTML = render(k); body.scrollTop = 0; return; }
+    body.style.setProperty('--dir', dir || 1); body.classList.add('swap');
+    setTimeout(() => { body.innerHTML = render(k); body.scrollTop = 0; body.style.setProperty('--dir', -(dir || 1)); requestAnimationFrame(() => body.classList.remove('swap')); }, 220);
   };
-  const step = d => show(ORDER[(ORDER.indexOf(cur) + d + ORDER.length) % ORDER.length], d);
-  $('#bprev').addEventListener('click', () => step(-1));
-  $('#bnext').addEventListener('click', () => step(1));
-  tabs.forEach(b => b.addEventListener('click', () => show(b.dataset.k)));
-  $$('[data-menu]').forEach(a => a.addEventListener('click', () => show(a.dataset.menu)));
+  const open = k => { lastFocus = document.activeElement; cur = null; show(k); modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false'); document.documentElement.classList.add('bm-lock'); setTimeout(() => $('.bm-close', modal).focus(), 50); };
+  const close = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); document.documentElement.classList.remove('bm-lock'); if (lastFocus) lastFocus.focus({ preventScroll: true }); };
+  const step = d => show(ORDER[(ORDER.indexOf(cur) + d + 3) % 3], d);
+  $('#bmprev').addEventListener('click', () => step(-1));
+  $('#bmnext').addEventListener('click', () => step(1));
+  $$('#bmtabs button').forEach(b => b.addEventListener('click', () => show(b.dataset.k, ORDER.indexOf(b.dataset.k) > ORDER.indexOf(cur) ? 1 : -1)));
+  $$('[data-bclose]').forEach(el => el.addEventListener('click', close));
+  addEventListener('keydown', e => { if (!modal.classList.contains('open')) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowRight') step(1); if (e.key === 'ArrowLeft') step(-1); });
+  body.addEventListener('click', e => { const a = e.target.closest('[data-mfran]'); if (!a) return; e.preventDefault(); close(); $('#f-type').value = FRAN[a.dataset.mfran]; setTimeout(() => $('#contact').scrollIntoView({ behavior: 'smooth' }), 80); });
+  $$('[data-bopen]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); open(a.dataset.bopen); }));
+  $$('.bcard').forEach(c => { const k = c.querySelector('[data-bopen]')?.dataset.bopen; if (!k) return; c.querySelectorAll('.ph, .blogo').forEach(el => el.addEventListener('click', () => open(k))); });
 })();
 </script>
 </body>
