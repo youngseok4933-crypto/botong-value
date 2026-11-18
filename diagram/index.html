@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>보통의가치 비즈니스 다이어그램</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf7; --fg: #17141a; --muted: #6f6a73; --surface: #ffffff; --border: #e7e2dc;
+    --accent: #56007a; --accent-soft: rgba(86,0,122,.08); --accent-mid: rgba(86,0,122,.22);
+    --edge: #b3aba3; --ok: #1f8a5b;
+    --fs: clamp(13px, min(1.18vw, 1.9vh), 27px);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font-family: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif; font-size: var(--fs); line-height: 1.45; overflow: hidden; }
+  .app { height: 100vh; display: grid; grid-template-rows: auto 1fr auto; gap: 2.2vh; padding: 2.6vh 3vw 2.2vh; }
+  header { display: flex; justify-content: space-between; align-items: flex-end; gap: 2vw; opacity: 0; animation: up .8s .1s ease-out forwards; }
+  .eyebrow { font-size: .8em; color: var(--muted); margin: 0 0 .3em; letter-spacing: .02em; }
+  h1 { font-size: 2.1em; font-weight: 700; letter-spacing: -.03em; margin: 0; line-height: 1.2; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .slogan { text-align: right; color: var(--muted); font-size: .9em; }
+  .slogan b { display: block; color: var(--fg); font-weight: 600; font-size: 1.1em; letter-spacing: -.01em; }
+  .wrap { position: relative; min-height: 0; }
+  .grid { display: grid; grid-template-columns: 1fr 1.08fr 1fr; gap: 0 5.5vw; height: 100%; position: relative; z-index: 1; }
+  .col { display: flex; flex-direction: column; gap: 2.4vh; min-height: 0; }
+  .lane { font-size: .8em; color: var(--muted); margin: 0; letter-spacing: .02em; display: flex; align-items: center; gap: .6em; }
+  .lane::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+  .node { flex: 1 1 0; background: var(--surface); border: 1px solid var(--border); border-radius: 1.1em; padding: 1.15em 1.3em; cursor: pointer; position: relative; transition: opacity .35s, border-color .35s, transform .35s, box-shadow .35s; opacity: 0; transform: translateY(16px); }
+  .node.in { opacity: 1; transform: none; animation: upIn .7s ease-out; }
+  @keyframes upIn { from { opacity: 0; transform: translateY(16px); } }
+  .node.hq { border-left: .32em solid var(--accent); }
+  .node .t { font-size: 1.35em; font-weight: 700; letter-spacing: -.02em; line-height: 1.25; }
+  .node .s { font-size: .92em; color: var(--muted); margin-top: .35em; line-height: 1.45; }
+  .node.sel { border-color: var(--accent); transform: translateY(0) scale(1.015); animation: ring 1.6s ease-out infinite; }
+  @keyframes ring { 0% { box-shadow: 0 0 0 0 rgba(86,0,122,.35); } 100% { box-shadow: 0 0 0 1.1em rgba(86,0,122,0); } }
+  .wrap.has-sel .node:not(.sel):not(.near) { opacity: .38; }
+  .wrap.has-sel .edge:not(.on) { opacity: .3; }
+  .chips { display: flex; flex-wrap: wrap; gap: .4em; margin-top: .8em; }
+  .chip { font-size: .82em; padding: .22em .7em; border-radius: 999px; background: #f1ede8; color: var(--fg); white-space: nowrap; }
+  .chip.ac { background: var(--accent); color: #fff; font-weight: 600; transition: opacity .4s, transform .4s; }
+  .chip.ac.out { opacity: 0; transform: translateY(-6px); }
+  .combo-row { display: flex; align-items: center; gap: .6em; margin-top: .8em; }
+  .combo-row .lab { font-size: .8em; color: var(--muted); white-space: nowrap; }
+  .blist { margin: .8em 0 0; padding: 0; list-style: none; display: grid; gap: .55em; }
+  .blist li { display: flex; justify-content: space-between; gap: .6em; font-size: 1.05em; line-height: 1.35; align-items: baseline; }
+  .blist li span:last-child { color: var(--muted); font-size: .9em; white-space: nowrap; }
+  .blist li.soon { color: var(--muted); }
+  .blist li b { font-weight: 600; display: flex; align-items: center; gap: .5em; }
+  .blist li.soon b { font-weight: 500; }
+  .blist .tag { font-size: .68em; border: 1px solid var(--border); border-radius: .3em; padding: .05em .4em; color: var(--muted); letter-spacing: .04em; }
+  .blist .dot { width: .5em; height: .5em; border-radius: 50%; background: var(--ok); display: inline-block; animation: pulse 2.4s ease-in-out infinite; }
+  .sub2 { display: grid; gap: .7em; margin-top: .9em; }
+  .sub { border: 1px solid var(--border); border-radius: .8em; padding: .75em .95em; background: #fdfcfa; }
+  .sub .t { font-size: 1em; }
+  .sub .n { font-size: 1.8em; font-weight: 700; letter-spacing: -.03em; font-variant-numeric: tabular-nums; margin-top: .1em; color: var(--accent); }
+  .sub .n small { font-size: .5em; font-weight: 400; color: var(--muted); margin-left: .4em; letter-spacing: 0; }
+  .sub .s { margin-top: .2em; }
+  svg.edges { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 2; }
+  .edge path.base { fill: none; stroke: var(--edge); stroke-width: 2.5; transition: stroke .35s; }
+  .edge path.flow { fill: none; stroke: var(--accent); stroke-width: 3; stroke-dasharray: 3 12; stroke-linecap: round; opacity: .7; animation: flow 1.1s linear infinite; }
+  .edge.on path.base { stroke: var(--accent-mid); }
+  .edge.on path.flow { opacity: 1; stroke-width: 2.5; }
+  .edge circle { fill: var(--accent); filter: drop-shadow(0 0 4px rgba(86,0,122,.5)); }
+  .edge .lbl rect { fill: var(--bg); }
+  .edge .lbl text { font-size: .85em; fill: var(--fg); font-family: inherit; font-weight: 600; }
+  .edge.on .lbl text { fill: var(--accent); font-weight: 600; }
+  .edge { transition: opacity .35s; }
+  @keyframes flow { to { stroke-dashoffset: -14; } }
+  @keyframes up { to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: .5; } }
+  footer { display: grid; grid-template-columns: 1.1fr 1fr 1.2fr; gap: 3vw; align-items: start; border-top: 1px solid var(--border); padding-top: 1.6vh; opacity: 0; animation: up .8s 1.4s ease-out forwards; }
+  .fh { font-size: .85em; color: var(--muted); margin: 0 0 .5em; }
+  .fh span { color: var(--accent); font-weight: 700; }
+  .frow { display: flex; flex-wrap: wrap; gap: .45em; }
+  .frow .chip { font-size: .85em; }
+  .frow .chip b { color: var(--accent); font-weight: 600; margin-left: .35em; }
+  .frow .chip.ok { background: rgba(31,138,91,.1); color: var(--ok); font-weight: 600; }
+  .detail { font-size: .95em; color: var(--muted); line-height: 1.5; }
+  .detail b { display: block; color: var(--fg); font-size: 1.1em; margin-bottom: .2em; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div><p class="eyebrow">보통의가치 · 비즈니스 다이어그램</p><h1>본사가 <em>만들고</em>, <em>처방하고</em>, <em>대신 운영</em>하는 구조</h1></div>
+    <div class="slogan"><b>지극히 평범한 사람들이 만들어 내는 비범의 가치</b>순자국밥 · 고명희냉면 · 육연회담을 만드는 한식 프랜차이즈</div>
+  </header>
+
+  <div class="wrap" id="wrap">
+    <svg class="edges" id="edges"></svg>
+    <div class="grid" id="grid">
+      <div class="col">
+        <p class="lane">01 · 브랜드를 만든다</p>
+        <div class="node hq" data-id="p1" style="flex-grow:1"><div class="t">브랜드 개발</div><div class="s">한식 브랜드 기획 · 메뉴 개발 · 레시피 표준화 · 오픈부터 운영까지 관리</div><div class="chips"><span class="chip">기획</span><span class="chip">메뉴 개발</span><span class="chip">레시피 표준화</span><span class="chip">오픈 · 운영 관리</span></div></div>
+        <div class="node" data-id="brands" style="flex-grow:2.3"><div class="t">브랜드 포트폴리오</div>
+          <ul class="blist">
+            <li><b><span class="dot"></span>순자국밥</b><span>국밥</span></li>
+            <li><b><span class="dot"></span>고명희냉면</b><span>냉면</span></li>
+            <li><b><span class="dot"></span>육연회담</b><span>육회 · 연어 · 초밥</span></li>
+            <li class="soon"><b><span class="tag">SOON</span>막내해장국</b><span>해장국</span></li>
+            <li class="soon"><b><span class="tag">SOON</span>큰이모김치찜</b><span>김치찜</span></li>
+            <li class="soon"><b><span class="tag">SOON</span>주먹아구찜</b><span>아구찜</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <p class="lane">02 · 처방하고, 대신 운영한다</p>
+        <div class="node hq" data-id="rx" style="flex-grow:1.7"><div class="t">처방하는 본사</div><div class="s">묶지 않고, 숨기지 않고, 매장을 진단해 맞는 브랜드 조합만 처방합니다.</div>
+          <div class="chips"><span class="chip">상권</span><span class="chip">주방설비</span><span class="chip">영업시간</span><span class="chip">인력</span><span class="chip">배달 수요 데이터</span></div>
+          <div class="combo-row"><span class="lab">처방 예시</span><span class="chip ac" id="combo">국밥 + 냉면</span></div>
+        </div>
+        <div class="node hq" data-id="p2" style="flex-grow:1"><div class="t">운영 자동화 · 보가LAB</div><div class="s">보통의가치가 직접 만든 매장 통합운영 프로그램. 사장님 일을 본사가 대신합니다.</div><div class="chips"><span class="chip">리뷰 답글</span><span class="chip">광고 조정</span><span class="chip">손익 관리</span><span class="chip">인력 관리</span><span class="chip">문의 응대</span><span class="chip">노출 순위</span></div></div>
+        <div class="node hq" data-id="p3" style="flex-grow:1"><div class="t">원가 경쟁력</div><div class="s">브랜드 원가율 <b class="cnt" data-to="30" data-suffix="%">0%</b> 설계 · 낮은 본사 물류마진 · 진짜 돈 버는 장사를 위한 구조</div><div class="chips"><span class="chip">원가율 30%</span><span class="chip">낮은 물류마진</span><span class="chip">샵인샵 추가 매출</span></div></div>
+      </div>
+      <div class="col">
+        <p class="lane">03 · 매장이 번다</p>
+        <div class="node" data-id="stores" style="flex-grow:2.5"><div class="t">매장 · 점주</div><div class="s">단독 매장과 기존 매장 샵인샵, 두 가지 출점</div>
+          <div class="sub2">
+            <div class="sub"><div class="t">신규 단독 매장</div><div class="n"><span class="cnt" data-to="3200" data-suffix="만원">0만원</span><small>VAT 별도</small></div><div class="s">주방 기물 · 냉동설비 · 인테리어 · 교육</div></div>
+            <div class="sub"><div class="t">샵인샵 · 업종변경</div><div class="n"><span class="cnt" data-to="300" data-suffix="만원">0만원</span><small>VAT 별도</small></div><div class="s">기존 기물 활용 · 하나의 주방에서 추가 매출</div></div>
+          </div>
+        </div>
+        <div class="node" data-id="cust" style="flex-grow:1"><div class="t">손님</div><div class="s">배달 · 홀에서 한 끼. 리뷰와 주문 데이터는 보가LAB으로 돌아와 다음 처방에 쓰입니다.</div><div class="chips"><span class="chip">배달</span><span class="chip">홀</span><span class="chip">리뷰</span><span class="chip">재주문</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div><p class="fh">본사 <span>→</span> 점주</p><div class="frow"><span class="chip">브랜드 · 레시피<b>표준화</b></span><span class="chip">식자재 물류<b>원가율 30%</b></span><span class="chip">보가LAB<b>통합운영</b></span><span class="chip">교육<b>100만원</b></span></div></div>
+    <div><p class="fh">점주 <span>→</span> 본사</p><div class="frow"><span class="chip">로열티 정액<b>월 20만원</b></span><span class="chip">식자재 매입</span><span class="chip ok">가맹비 면제</span><span class="chip ok">해지위약금 없음</span></div></div>
+    <div class="detail" id="detail"></div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const info = {
+    p1: ['브랜드 개발', '한식 프랜차이즈 브랜드를 직접 기획·개발하고, 메뉴와 레시피를 표준화해 어느 매장에서도 같은 맛이 나오게 합니다.'],
+    brands: ['브랜드 포트폴리오', '운영 중 3개(순자국밥 · 고명희냉면 · 육연회담), 준비 중 3개(막내해장국 · 큰이모김치찜 · 주먹아구찜). 브랜드가 늘수록 한 주방에 얹을 수 있는 조합이 늘어납니다.'],
+    rx: ['처방하는 본사', '상권 · 주방설비 · 영업시간 · 인력 · 배달 수요 데이터로 매장을 진단하고, 그 가게에 맞는 브랜드 조합만 처방합니다. 묶어 팔지 않습니다.'],
+    p2: ['운영 자동화 · 보가LAB', '직접 매장을 운영하며 만든 통합운영 프로그램. 플랫폼별 매출·정산·BEP, 리뷰 답글 자동화, 노출 순위 추적으로 사장님 일을 줄입니다.'],
+    p3: ['원가 경쟁력', '브랜드 원가율 30% 설계와 낮은 본사 물류마진. 유통 자체가 아니라 "진짜 돈 버는 장사"가 되는 구조를 경쟁력으로 둡니다.'],
+    stores: ['매장 · 점주', '신규 단독 매장 3,200만원, 기존 매장 샵인샵·업종변경 300만원(순자국밥 기준, VAT 별도). 로열티는 월 매출 3천만원 이상일 때 정액 20만원.'],
+    cust: ['손님', '배달과 홀에서 한 끼를 사 먹는 보통의 사람들. 리뷰와 주문 데이터는 보가LAB으로 돌아와 다음 처방과 운영에 쓰입니다.'],
+  };
+  const order = ['p1', 'brands', 'rx', 'p2', 'p3', 'stores', 'cust'];
+  const edges = [
+    ['p1', 'brands', '기획 · 레시피 표준화'],
+    ['brands', 'rx', '운영 3 · 준비 3'],
+    ['rx', 'stores', '맞는 조합 처방'],
+    ['p2', 'stores', '리뷰 · 광고 · 손익 대행'],
+    ['p3', 'stores', '식자재 물류 · 원가 30%'],
+    ['stores', 'cust', '한 끼'],
+  ];
+  const wrap = document.getElementById('wrap'), svg = document.getElementById('edges'), detail = document.getElementById('detail');
+  const NS = 'http://www.w3.org/2000/svg';
+  const nodeEl = id => wrap.querySelector('[data-id="' + id + '"]');
+  const edgeEls = [];
+  let drawn = false;
+
+  function rectOf(el) {
+    const w = wrap.getBoundingClientRect(), r = el.getBoundingClientRect();
+    return { l: r.left - w.left, t: r.top - w.top, r: r.right - w.left, b: r.bottom - w.top, cx: (r.left + r.right) / 2 - w.left, cy: (r.top + r.bottom) / 2 - w.top };
+  }
+  function draw(first) {
+    svg.innerHTML = ''; edgeEls.length = 0;
+    const rects = {}; order.forEach(id => rects[id] = rectOf(nodeEl(id)));
+    const inCount = {}, inIdx = {};
+    edges.forEach(([a, b]) => { if (rects[b].l >= rects[a].r - 2) inCount[b] = (inCount[b] || 0) + 1; });
+    edges.forEach(([a, b, label], k) => {
+      const s = rects[a], t = rects[b];
+      let d, mx, my, anchor = 'middle';
+      if (t.l >= s.r - 2) {
+        const n = inCount[b], i = (inIdx[b] = (inIdx[b] || 0) + 1);
+        const ty = n > 1 ? t.t + (t.b - t.t) * i / (n + 1) : t.cy;
+        const x1 = s.r, x2 = t.l, c = (x2 - x1) / 2;
+        d = 'M' + x1 + ',' + s.cy + ' C' + (x1 + c) + ',' + s.cy + ' ' + (x2 - c) + ',' + ty + ' ' + x2 + ',' + ty;
+        mx = (x1 + x2) / 2; my = (s.cy + ty) / 2;
+      } else {
+        const y1 = s.b, y2 = t.t, c = (y2 - y1) / 2;
+        d = 'M' + s.cx + ',' + y1 + ' C' + s.cx + ',' + (y1 + c) + ' ' + t.cx + ',' + (y2 - c) + ' ' + t.cx + ',' + y2;
+        mx = (s.cx + t.cx) / 2 + 12; my = (y1 + y2) / 2; anchor = 'start';
+      }
+      const g = document.createElementNS(NS, 'g'); g.setAttribute('class', 'edge'); g.dataset.a = a; g.dataset.b = b;
+      const base = document.createElementNS(NS, 'path'); base.setAttribute('d', d); base.setAttribute('class', 'base'); base.id = 'e' + k;
+      const flow = document.createElementNS(NS, 'path'); flow.setAttribute('d', d); flow.setAttribute('class', 'flow');
+      g.appendChild(base); g.appendChild(flow);
+      // travelling dot
+      const dot = document.createElementNS(NS, 'circle'); dot.setAttribute('r', 6);
+      const am = document.createElementNS(NS, 'animateMotion'); am.setAttribute('dur', (2.6 + k * .35) + 's'); am.setAttribute('repeatCount', 'indefinite'); am.setAttribute('begin', (first ? 1.2 : 0) + k * .4 + 's');
+      const mp = document.createElementNS(NS, 'mpath'); mp.setAttribute('href', '#e' + k); am.appendChild(mp); dot.appendChild(am); g.appendChild(dot);
+      const lg = document.createElementNS(NS, 'g'); lg.setAttribute('class', 'lbl');
+      const tx = document.createElementNS(NS, 'text'); tx.setAttribute('x', mx); tx.setAttribute('y', my + 5); tx.setAttribute('text-anchor', anchor); tx.textContent = label;
+      const bg = document.createElementNS(NS, 'rect'); lg.appendChild(bg); lg.appendChild(tx); g.appendChild(lg);
+      svg.appendChild(g);
+      const bb = tx.getBBox();
+      bg.setAttribute('x', bb.x - 7); bg.setAttribute('y', bb.y - 3); bg.setAttribute('width', bb.width + 14); bg.setAttribute('height', bb.height + 6); bg.setAttribute('rx', 6);
+      if (first) {
+        const len = base.getTotalLength();
+        base.style.strokeDasharray = len; base.style.strokeDashoffset = len;
+        base.animate([{ strokeDashoffset: len }, { strokeDashoffset: 0 }], { duration: 900, delay: 500 + k * 120, easing: 'ease-out', fill: 'forwards' });
+        flow.animate([{ opacity: 0 }, { opacity: .55 }], { duration: 500, delay: 1200 + k * 120, fill: 'forwards' });
+        lg.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 400, delay: 1000 + k * 120, fill: 'forwards' });
+        dot.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 400, delay: 1200 + k * 120, fill: 'forwards' });
+      }
+      edgeEls.push(g);
+    });
+    applySel();
+  }
+  let sel = null, pinned = false, tourIdx = -1;
+  function applySel() {
+    wrap.classList.toggle('has-sel', !!sel);
+    order.forEach(id => nodeEl(id).classList.remove('sel', 'near'));
+    edgeEls.forEach(g => g.classList.remove('on'));
+    if (sel) {
+      nodeEl(sel).classList.add('sel');
+      edgeEls.forEach(g => { if (g.dataset.a === sel || g.dataset.b === sel) { g.classList.add('on'); nodeEl(g.dataset.a).classList.add('near'); nodeEl(g.dataset.b).classList.add('near'); } });
+    }
+    const [h, p] = sel ? info[sel] : ['보통의가치 본사', '브랜드를 만들고, 매장에 맞는 조합을 처방하고, 보가LAB으로 운영을 대신하는 한식 프랜차이즈 본사. 박스를 누르면 고정됩니다.'];
+    detail.innerHTML = '<b>' + h + '</b>' + p;
+  }
+  order.forEach(id => nodeEl(id).addEventListener('click', () => {
+    if (pinned && sel === id) { pinned = false; sel = null; } else { pinned = true; sel = id; }
+    applySel();
+  }));
+  // entrance: nodes stagger
+  order.forEach((id, i) => setTimeout(() => nodeEl(id).classList.add('in'), 250 + i * 140));
+  // count-ups
+  document.querySelectorAll('.cnt').forEach(el => {
+    const to = +el.dataset.to, suf = el.dataset.suffix, t0 = performance.now() + 1300, dur = 1400;
+    (function tick(now) { const p = Math.min(1, Math.max(0, (now - t0) / dur)), e = 1 - Math.pow(1 - p, 3); el.textContent = Math.round(to * e).toLocaleString('ko-KR') + suf; if (p < 1) requestAnimationFrame(tick); })(performance.now());
+  });
+  // combo rotation
+  const combos = ['국밥 + 냉면', '국밥 + 아구찜', '냉면 + 초밥', '국밥 + 김치찜', '김치찜 + 냉면', '국밥 + 냉면 + 초밥', '아구찜 + 냉면', '해장국 + 냉면'];
+  const comboEl = document.getElementById('combo'); let ci = 0;
+  setInterval(() => { comboEl.classList.add('out'); setTimeout(() => { ci = (ci + 1) % combos.length; comboEl.textContent = combos[ci]; comboEl.classList.remove('out'); }, 400); }, 2600);
+  // auto tour
+  setInterval(() => { if (pinned) return; tourIdx = (tourIdx + 1) % (order.length + 1); sel = tourIdx < order.length ? order[tourIdx] : null; applySel(); }, 3800);
+  new ResizeObserver(() => { if (drawn) draw(false); }).observe(wrap);
+  const start = () => { drawn = true; draw(true); };
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(start); else start();
+})();
+</script>
+</body>
+</html>
