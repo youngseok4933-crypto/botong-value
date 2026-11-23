@@ -4,6 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="naver-site-verification" content="52829b43cbef7cee3ca0b8cd86873c150318c651" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="only light" />
+<meta name="supported-color-schemes" content="light" />
 <link rel="canonical" href="https://xn--o39am53a9yh3ih6oe.com/" />
 <title>보통의가치 | 지극히 평범한 사람들이 만들어 내는 비범의 가치</title>
 <meta name="description" content="㈜보통의가치는 순자국밥, 고명희냉면, 육연회담을 운영하는 한식 프랜차이즈 기업입니다. 브랜드의 시작부터 운영의 완성까지, 보통의가치가 설계합니다." />
@@ -31,6 +33,11 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
+  /* 휴대폰 다크모드 대응: 사이트는 밝은 화면 전용, 가로 넘침 방지, 로고 가독성 */
+  :root{color-scheme:only light}
+  @supports (overflow:clip){html,body{overflow-x:clip}}
+  .logo img,.ft .flogo img{filter:drop-shadow(0 0 .6px rgba(255,255,255,.95)) drop-shadow(0 0 1.4px rgba(255,255,255,.8))}
+
   body{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:var(--bg);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
